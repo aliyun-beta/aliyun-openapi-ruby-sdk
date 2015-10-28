@@ -1,0 +1,7 @@
+module Aliyun
+  module Openapi
+    module Core
+      VERSION = "0.0.0"
+    end
+  end
+end
