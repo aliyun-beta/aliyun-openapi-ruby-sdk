@@ -1,0 +1,57 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"SetUserBusinessStatus",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"true",
+				"tagName":"Uid",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"true",
+				"tagName":"Service",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"true",
+				"tagName":"StatusKey",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"true",
+				"tagName":"StatusValue",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Ubsms",
+	"resultMapping":{
+		"members":[
+			{
+				"tagName":"Success",
+				"type":"Boolean"
+			}
+		]
+	},
+	"version":"2015-06-23"
+}

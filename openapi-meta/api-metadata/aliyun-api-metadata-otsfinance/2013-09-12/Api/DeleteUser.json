@@ -1,0 +1,19 @@
+{
+	"isvProtocol":{
+		"method":"POST",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"DeleteUser",
+	"parameters":{
+		"parameters":[
+			
+		]
+	},
+	"product":"OtsFinance",
+	"resultMapping":{
+		"members":[
+			
+		]
+	},
+	"version":"2013-09-12"
+}

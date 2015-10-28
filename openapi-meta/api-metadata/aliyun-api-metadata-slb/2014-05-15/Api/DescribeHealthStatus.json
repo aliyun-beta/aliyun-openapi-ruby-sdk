@@ -1,0 +1,90 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"DescribeHealthStatus",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"false",
+				"tagName":"OwnerId",
+				"tagPosition":"Query",
+				"type":"Long",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"ResourceOwnerAccount",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"ResourceOwnerId",
+				"tagPosition":"Query",
+				"type":"Long",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"true",
+				"tagName":"LoadBalancerId",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"maxValue":"65535",
+				"minValue":"1",
+				"required":"false",
+				"tagName":"ListenerPort",
+				"tagPosition":"Query",
+				"type":"Integer",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"OwnerAccount",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Slb",
+	"resultMapping":{
+		"arrays":[
+			{
+				"itemName":"BackendServer",
+				"members":[
+					{
+						"tagName":"ServerId",
+						"type":"String"
+					},
+					{
+						"tagName":"ServerHealthStatus",
+						"type":"String"
+					}
+				],
+				"tagName":"BackendServers"
+			}
+		],
+		"members":[
+			
+		]
+	},
+	"version":"2014-05-15"
+}

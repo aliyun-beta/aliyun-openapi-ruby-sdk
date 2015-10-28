@@ -1,0 +1,66 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"PushByteMessage",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"true",
+				"tagName":"AppId",
+				"tagPosition":"Query",
+				"type":"Long",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"true",
+				"tagName":"SendType",
+				"tagPosition":"Query",
+				"type":"Integer",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"Accounts",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"DeviceIds",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"true",
+				"tagName":"PushContent",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Push",
+	"resultMapping":{
+		"members":[
+			{
+				"tagName":"ResponseId",
+				"type":"String"
+			}
+		]
+	},
+	"version":"2015-08-27"
+}

@@ -1,0 +1,45 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"StopTask",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"true",
+				"tagName":"TaskId",
+				"tagPosition":"Query",
+				"type":"Integer",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"Type",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"Msg",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"PTS",
+	"resultMapping":{
+		"members":[
+			
+		]
+	},
+	"version":"2015-08-01"
+}

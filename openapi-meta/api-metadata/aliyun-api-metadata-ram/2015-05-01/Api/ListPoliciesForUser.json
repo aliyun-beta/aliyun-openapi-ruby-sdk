@@ -1,0 +1,55 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTPS"
+	},
+	"name":"ListPoliciesForUser",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"false",
+				"tagName":"UserName",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Ram",
+	"resultMapping":{
+		"arrays":[
+			{
+				"itemName":"Policy",
+				"members":[
+					{
+						"tagName":"PolicyName",
+						"type":"String"
+					},
+					{
+						"tagName":"PolicyType",
+						"type":"String"
+					},
+					{
+						"tagName":"Description",
+						"type":"String"
+					},
+					{
+						"tagName":"DefaultVersion",
+						"type":"String"
+					},
+					{
+						"tagName":"AttachDate",
+						"type":"String"
+					}
+				],
+				"tagName":"Policies"
+			}
+		],
+		"members":[
+			
+		]
+	},
+	"version":"2015-05-01"
+}

@@ -1,0 +1,47 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"ListExecutePlanNodeInstances",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"true",
+				"tagName":"ExecutePlanWorkNodeId",
+				"tagPosition":"Query",
+				"type":"Long",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Emr",
+	"resultMapping":{
+		"arrays":[
+			{
+				"itemName":"ExecutePlanNodeInstanceInfo",
+				"members":[
+					{
+						"tagName":"ApplicationId",
+						"type":"String"
+					},
+					{
+						"tagName":"InstanceInfo",
+						"type":"String"
+					},
+					{
+						"tagName":"ContainerInfo",
+						"type":"String"
+					}
+				],
+				"tagName":"ExecutePlanNodeInstance"
+			}
+		],
+		"members":[
+			
+		]
+	},
+	"version":"2015-09-10"
+}

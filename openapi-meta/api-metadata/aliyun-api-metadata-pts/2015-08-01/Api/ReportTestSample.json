@@ -1,0 +1,27 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"ReportTestSample",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"true",
+				"tagName":"TestSample",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"PTS",
+	"resultMapping":{
+		"members":[
+			
+		]
+	},
+	"version":"2015-08-01"
+}

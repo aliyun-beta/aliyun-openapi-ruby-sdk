@@ -1,0 +1,111 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"CreateDrdsInstance",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"false",
+				"tagName":"Description",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"true",
+				"tagName":"ZoneId",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"true",
+				"tagName":"Type",
+				"tagPosition":"Query",
+				"type":"String",
+				"value":"PRIVATE, PUBLIC, 1, 0",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"true",
+				"tagName":"Quantity",
+				"tagPosition":"Query",
+				"type":"Integer",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"true",
+				"tagName":"Specification",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"true",
+				"tagName":"PayType",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"VpcId",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"VswitchId",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Drds",
+	"resultMapping":{
+		"members":[
+			{
+				"tagName":"Success",
+				"type":"Boolean"
+			}
+		],
+		"structs":[
+			{
+				"lists":[
+					{
+						"itemName":"DrdsInstanceId",
+						"tagName":"DrdsInstanceIdList"
+					}
+				],
+				"members":[
+					{
+						"tagName":"OrderId",
+						"type":"Long"
+					}
+				],
+				"tagName":"Data"
+			}
+		]
+	},
+	"version":"2015-04-13"
+}

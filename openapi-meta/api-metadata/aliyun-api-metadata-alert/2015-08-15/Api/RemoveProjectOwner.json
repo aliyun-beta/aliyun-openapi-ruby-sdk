@@ -1,0 +1,52 @@
+{
+	"isvProtocol":{
+		"method":"GET",
+		"pattern":"/projects/removeOwner",
+		"protocol":"HTTP"
+	},
+	"name":"RemoveProjectOwner",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"false",
+				"tagName":"ProjectName",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"Owners",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Alert",
+	"resultMapping":{
+		"members":[
+			{
+				"tagName":"code",
+				"type":"String"
+			},
+			{
+				"tagName":"message",
+				"type":"String"
+			},
+			{
+				"tagName":"success",
+				"type":"String"
+			},
+			{
+				"tagName":"traceId",
+				"type":"String"
+			}
+		]
+	},
+	"version":"2015-08-15"
+}

@@ -1,0 +1,101 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"DescribeVpcZoneNos",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"false",
+				"tagName":"OwnerId",
+				"tagPosition":"Query",
+				"type":"Long",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"ResourceOwnerAccount",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"ResourceOwnerId",
+				"tagPosition":"Query",
+				"type":"Long",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"ClientToken",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"OwnerAccount",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"Region",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"ZoneId",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Rds_Region",
+	"resultMapping":{
+		"arrays":[
+			{
+				"itemName":"VpcZoneId",
+				"members":[
+					{
+						"tagName":"ZoneId",
+						"type":"String"
+					},
+					{
+						"tagName":"Region",
+						"type":"String"
+					},
+					{
+						"tagName":"SubDomain",
+						"type":"String"
+					}
+				],
+				"tagName":"Items"
+			}
+		],
+		"members":[
+			
+		]
+	},
+	"version":"2014-08-15"
+}

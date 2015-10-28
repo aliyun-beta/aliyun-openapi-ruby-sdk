@@ -1,0 +1,50 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTPS"
+	},
+	"name":"GetLoginProfile",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"false",
+				"tagName":"UserName",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Ram",
+	"resultMapping":{
+		"members":[
+			
+		],
+		"structs":[
+			{
+				"members":[
+					{
+						"tagName":"UserName",
+						"type":"String"
+					},
+					{
+						"tagName":"PasswordResetRequired",
+						"type":"Boolean"
+					},
+					{
+						"tagName":"MFABindRequired",
+						"type":"Boolean"
+					},
+					{
+						"tagName":"CreateDate",
+						"type":"String"
+					}
+				],
+				"tagName":"LoginProfile"
+			}
+		]
+	},
+	"version":"2015-05-01"
+}

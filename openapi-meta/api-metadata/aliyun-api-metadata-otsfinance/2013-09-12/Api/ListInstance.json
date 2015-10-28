@@ -1,0 +1,43 @@
+{
+	"isvProtocol":{
+		"method":"GET",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"ListInstance",
+	"parameters":{
+		"parameters":[
+			
+		]
+	},
+	"product":"OtsFinance",
+	"resultMapping":{
+		"arrays":[
+			{
+				"itemName":"InstanceInfo",
+				"members":[
+					{
+						"tagName":"InstanceName",
+						"type":"String"
+					},
+					{
+						"tagName":"InstanceId",
+						"type":"String"
+					},
+					{
+						"tagName":"Version",
+						"type":"String"
+					},
+					{
+						"tagName":"Timestamp",
+						"type":"String"
+					}
+				],
+				"tagName":"InstanceInfos"
+			}
+		],
+		"members":[
+			
+		]
+	},
+	"version":"2013-09-12"
+}

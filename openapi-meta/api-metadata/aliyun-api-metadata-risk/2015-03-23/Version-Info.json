@@ -1,0 +1,18 @@
+{
+	"apiStyle":"RPC",
+	"apis":{
+		"apis":[
+			{
+				"name":"ValidateVerifyCode"
+			},
+			{
+				"name":"SendVerifyCode"
+			},
+			{
+				"name":"FindRisk"
+			}
+		]
+	},
+	"name":"2015-03-23",
+	"product":"Risk"
+}

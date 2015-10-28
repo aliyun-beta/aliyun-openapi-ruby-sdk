@@ -1,0 +1,56 @@
+{
+	"isvProtocol":{
+		"method":"GET",
+		"pattern":"/projects/[ProjectName]/sources/[SourceName]",
+		"protocol":"HTTP"
+	},
+	"name":"GetDBSource",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"true",
+				"tagName":"ProjectName",
+				"tagPosition":"Path",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"true",
+				"tagName":"SourceName",
+				"tagPosition":"Path",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Alert",
+	"resultMapping":{
+		"members":[
+			{
+				"tagName":"code",
+				"type":"String"
+			},
+			{
+				"tagName":"message",
+				"type":"String"
+			},
+			{
+				"tagName":"success",
+				"type":"String"
+			},
+			{
+				"tagName":"traceId",
+				"type":"String"
+			},
+			{
+				"tagName":"result",
+				"type":"String"
+			}
+		]
+	},
+	"version":"2015-08-15"
+}

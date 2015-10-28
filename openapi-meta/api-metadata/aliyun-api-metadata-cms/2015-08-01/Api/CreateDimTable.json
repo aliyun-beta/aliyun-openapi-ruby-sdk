@@ -1,0 +1,46 @@
+{
+	"isvProtocol":{
+		"method":"POST",
+		"protocol":"HTTP"
+	},
+	"name":"CreateDimTable",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"false",
+				"tagName":"DimTable",
+				"tagPosition":"Body",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Cms",
+	"resultMapping":{
+		"members":[
+			{
+				"tagName":"Code",
+				"type":"String"
+			},
+			{
+				"tagName":"Message",
+				"type":"String"
+			},
+			{
+				"tagName":"Success",
+				"type":"String"
+			},
+			{
+				"tagName":"TraceId",
+				"type":"String"
+			},
+			{
+				"tagName":"Result",
+				"type":"Long"
+			}
+		]
+	},
+	"version":"2015-08-01"
+}

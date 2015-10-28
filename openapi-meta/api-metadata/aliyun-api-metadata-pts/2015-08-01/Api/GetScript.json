@@ -1,0 +1,39 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"GetScript",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"false",
+				"tagName":"ScriptId",
+				"tagPosition":"Query",
+				"type":"Integer",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"Tfsname",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"PTS",
+	"resultMapping":{
+		"members":[
+			{
+				"tagName":"Script",
+				"type":"String"
+			}
+		]
+	},
+	"version":"2015-08-01"
+}

@@ -1,0 +1,47 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTPS"
+	},
+	"name":"GetUserPolicy",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"true",
+				"tagName":"UserName",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"true",
+				"tagName":"PolicyName",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Ram",
+	"resultMapping":{
+		"members":[
+			{
+				"tagName":"UserName",
+				"type":"String"
+			},
+			{
+				"tagName":"PolicyName",
+				"type":"String"
+			},
+			{
+				"tagName":"PolicyDocument",
+				"type":"String"
+			}
+		]
+	},
+	"version":"2014-02-14"
+}

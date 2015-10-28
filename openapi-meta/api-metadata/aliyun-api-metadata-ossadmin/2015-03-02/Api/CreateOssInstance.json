@@ -1,0 +1,86 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"CreateOssInstance",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"false",
+				"tagName":"OwnerId",
+				"tagPosition":"Query",
+				"type":"Long",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"ResourceOwnerAccount",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"ResourceOwnerId",
+				"tagPosition":"Query",
+				"type":"Long",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"region",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"OwnerAccount",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"OssAdmin",
+	"resultMapping":{
+		"members":[
+			{
+				"tagName":"AliUid",
+				"type":"Long"
+			},
+			{
+				"tagName":"InstanceId",
+				"type":"String"
+			},
+			{
+				"tagName":"InstacneStatus",
+				"type":"String"
+			},
+			{
+				"tagName":"InstanceName",
+				"type":"String"
+			},
+			{
+				"tagName":"StartTime",
+				"type":"String"
+			},
+			{
+				"tagName":"EndTime",
+				"type":"String"
+			}
+		]
+	},
+	"version":"2015-03-02"
+}

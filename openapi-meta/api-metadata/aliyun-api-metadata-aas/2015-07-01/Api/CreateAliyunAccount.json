@@ -1,0 +1,34 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"CreateAliyunAccount",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"false",
+				"tagName":"AliyunId",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Aas",
+	"resultMapping":{
+		"members":[
+			{
+				"tagName":"PK",
+				"type":"String"
+			},
+			{
+				"tagName":"AliyunId",
+				"type":"String"
+			}
+		]
+	},
+	"version":"2015-07-01"
+}

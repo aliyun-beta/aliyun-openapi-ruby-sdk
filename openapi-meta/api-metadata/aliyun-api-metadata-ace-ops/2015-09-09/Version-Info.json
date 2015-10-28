@@ -1,0 +1,15 @@
+{
+	"apiStyle":"RPC",
+	"apis":{
+		"apis":[
+			{
+				"name":"report"
+			},
+			{
+				"name":"query"
+			}
+		]
+	},
+	"name":"2015-09-09",
+	"product":"Ace-ops"
+}

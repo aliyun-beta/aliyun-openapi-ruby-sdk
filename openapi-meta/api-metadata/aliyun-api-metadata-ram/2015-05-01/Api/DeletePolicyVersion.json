@@ -1,0 +1,36 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTPS"
+	},
+	"name":"DeletePolicyVersion",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"false",
+				"tagName":"PolicyName",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"VersionId",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Ram",
+	"resultMapping":{
+		"members":[
+			
+		]
+	},
+	"version":"2015-05-01"
+}

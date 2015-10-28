@@ -1,0 +1,82 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"pattern":"",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"SetResourceBusinessStatus",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"false",
+				"tagName":"OwnerId",
+				"tagPosition":"Query",
+				"type":"Long",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"ResourceOwnerAccount",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"ResourceOwnerId",
+				"tagPosition":"Query",
+				"type":"Long",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"true",
+				"tagName":"ResourceType",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"true",
+				"tagName":"ResourceId",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"true",
+				"tagName":"BusinessStatus",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"OwnerAccount",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Bss",
+	"resultMapping":{
+		"members":[
+			
+		]
+	},
+	"version":"2014-07-14"
+}

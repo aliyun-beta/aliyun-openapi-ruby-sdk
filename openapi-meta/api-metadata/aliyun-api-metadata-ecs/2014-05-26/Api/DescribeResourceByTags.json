@@ -1,0 +1,196 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"DescribeResourceByTags",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"false",
+				"tagName":"OwnerId",
+				"tagPosition":"Query",
+				"type":"Long",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"ResourceOwnerAccount",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"ResourceOwnerId",
+				"tagPosition":"Query",
+				"type":"Long",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"maxValue":"100",
+				"minValue":"0",
+				"required":"false",
+				"tagName":"PageSize",
+				"tagPosition":"Query",
+				"type":"Integer",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"minValue":"0",
+				"required":"false",
+				"tagName":"PageNumber",
+				"tagPosition":"Query",
+				"type":"Integer",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"ResourceType",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"Tag.1.Key",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"Tag.2.Key",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"Tag.3.Key",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"Tag.4.Key",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"Tag.5.Key",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"Tag.1.Value",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"Tag.2.Value",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"Tag.3.Value",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"Tag.4.Value",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"Tag.5.Value",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Ecs",
+	"resultMapping":{
+		"arrays":[
+			{
+				"itemName":"Resource",
+				"members":[
+					{
+						"tagName":"ResourceId",
+						"type":"String"
+					},
+					{
+						"tagName":"ResourceType",
+						"type":"String"
+					},
+					{
+						"tagName":"RegionId",
+						"type":"String"
+					}
+				],
+				"tagName":"Resources"
+			}
+		],
+		"members":[
+			{
+				"tagName":"PageSize",
+				"type":"Integer"
+			},
+			{
+				"tagName":"PageNumber",
+				"type":"Integer"
+			},
+			{
+				"tagName":"TotalCount",
+				"type":"Integer"
+			}
+		]
+	},
+	"version":"2014-05-26"
+}

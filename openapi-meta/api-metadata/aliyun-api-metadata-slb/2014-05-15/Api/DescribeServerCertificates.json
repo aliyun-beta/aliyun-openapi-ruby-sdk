@@ -1,0 +1,91 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"DescribeServerCertificates",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"false",
+				"tagName":"OwnerId",
+				"tagPosition":"Query",
+				"type":"Long",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"ResourceOwnerAccount",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"ResourceOwnerId",
+				"tagPosition":"Query",
+				"type":"Long",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"ServerCertificateId",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"OwnerAccount",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Slb",
+	"resultMapping":{
+		"arrays":[
+			{
+				"itemName":"ServerCertificate",
+				"members":[
+					{
+						"tagName":"ServerCertificateId",
+						"type":"String"
+					},
+					{
+						"tagName":"Fingerprint",
+						"type":"String"
+					},
+					{
+						"tagName":"ServerCertificateName",
+						"type":"String"
+					},
+					{
+						"tagName":"RegionId",
+						"type":"String"
+					},
+					{
+						"tagName":"RegionIdAlias",
+						"type":"String"
+					}
+				],
+				"tagName":"ServerCertificates"
+			}
+		],
+		"members":[
+			
+		]
+	},
+	"version":"2014-05-15"
+}

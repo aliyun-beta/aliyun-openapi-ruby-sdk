@@ -1,0 +1,26 @@
+{
+	"isvProtocol":{
+		"method":"GET",
+		"pattern":"/snapshots/[ResourceName]",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"GetSnapshot",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"true",
+				"tagName":"ResourceName",
+				"tagPosition":"Path",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"BatchCompute",
+	"resultMapping":{
+		
+	},
+	"version":"2013-01-11"
+}

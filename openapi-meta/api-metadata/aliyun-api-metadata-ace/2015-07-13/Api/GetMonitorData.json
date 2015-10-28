@@ -1,0 +1,91 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"GetMonitorData",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"true",
+				"tagName":"AppId",
+				"tagPosition":"Query",
+				"type":"Long",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"true",
+				"tagName":"Item",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"true",
+				"tagName":"StartTime",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"true",
+				"tagName":"EndTime",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"CurPage",
+				"tagPosition":"Query",
+				"type":"Integer",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"PageSize",
+				"tagPosition":"Query",
+				"type":"Integer",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Ace",
+	"resultMapping":{
+		"arrays":[
+			{
+				"itemName":"Item",
+				"members":[
+					{
+						"tagName":"Timestamp",
+						"type":"Long"
+					},
+					{
+						"tagName":"Value",
+						"type":"Float"
+					}
+				],
+				"tagName":"Data"
+			}
+		],
+		"members":[
+			{
+				"tagName":"NextPageNum",
+				"type":"String"
+			}
+		]
+	},
+	"version":"2015-07-13"
+}

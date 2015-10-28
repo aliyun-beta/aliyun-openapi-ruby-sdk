@@ -1,0 +1,86 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"DescribeZones",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"false",
+				"tagName":"OwnerId",
+				"tagPosition":"Query",
+				"type":"Long",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"ResourceOwnerAccount",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"ResourceOwnerId",
+				"tagPosition":"Query",
+				"type":"Long",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"OwnerAccount",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Slb",
+	"resultMapping":{
+		"arrays":[
+			{
+				"arrays":[
+					{
+						"itemName":"SlaveZone",
+						"members":[
+							{
+								"tagName":"ZoneId",
+								"type":"String"
+							},
+							{
+								"tagName":"LocalName",
+								"type":"String"
+							}
+						],
+						"tagName":"SlaveZones"
+					}
+				],
+				"itemName":"Zone",
+				"members":[
+					{
+						"tagName":"ZoneId",
+						"type":"String"
+					},
+					{
+						"tagName":"LocalName",
+						"type":"String"
+					}
+				],
+				"tagName":"Zones"
+			}
+		],
+		"members":[
+			
+		]
+	},
+	"version":"2014-05-15"
+}

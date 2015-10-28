@@ -1,0 +1,39 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"ListRegions",
+	"parameters":{
+		"parameters":[
+			
+		]
+	},
+	"product":"Emr",
+	"resultMapping":{
+		"arrays":[
+			{
+				"itemName":"RegionType",
+				"members":[
+					{
+						"tagName":"Name",
+						"type":"String"
+					},
+					{
+						"tagName":"Id",
+						"type":"String"
+					},
+					{
+						"tagName":"AsUrl",
+						"type":"String"
+					}
+				],
+				"tagName":"RegionTypes"
+			}
+		],
+		"members":[
+			
+		]
+	},
+	"version":"2015-09-10"
+}

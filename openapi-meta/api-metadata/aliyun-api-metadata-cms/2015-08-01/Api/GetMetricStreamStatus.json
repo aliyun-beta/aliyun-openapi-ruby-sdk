@@ -1,0 +1,51 @@
+{
+	"isvProtocol":{
+		"method":"GET",
+		"protocol":"HTTP"
+	},
+	"name":"GetMetricStreamStatus",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"false",
+				"tagName":"ProjectName",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"MetricStreamName",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Cms",
+	"resultMapping":{
+		"members":[
+			{
+				"tagName":"Code",
+				"type":"String"
+			},
+			{
+				"tagName":"Message",
+				"type":"String"
+			},
+			{
+				"tagName":"Success",
+				"type":"String"
+			},
+			{
+				"tagName":"TraceId",
+				"type":"String"
+			}
+		]
+	},
+	"version":"2015-08-01"
+}

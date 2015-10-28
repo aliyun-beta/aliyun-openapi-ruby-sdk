@@ -1,0 +1,45 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"ConfirmLogin",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"true",
+				"tagName":"InstanceId",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"true",
+				"tagName":"SourceIp",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"true",
+				"tagName":"Time",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Yundun",
+	"resultMapping":{
+		"members":[
+			
+		]
+	},
+	"version":"2015-04-16"
+}

@@ -1,0 +1,22 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"TodayAegisOnlineRate",
+	"parameters":{
+		"parameters":[
+			
+		]
+	},
+	"product":"Yundun",
+	"resultMapping":{
+		"members":[
+			{
+				"tagName":"Rate",
+				"type":"Long"
+			}
+		]
+	},
+	"version":"2015-02-27"
+}

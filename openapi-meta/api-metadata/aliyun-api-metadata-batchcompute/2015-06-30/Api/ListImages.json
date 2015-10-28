@@ -1,0 +1,18 @@
+{
+	"isvProtocol":{
+		"method":"GET",
+		"pattern":"/images",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"ListImages",
+	"parameters":{
+		"parameters":[
+			
+		]
+	},
+	"product":"BatchCompute",
+	"resultMapping":{
+		
+	},
+	"version":"2015-06-30"
+}

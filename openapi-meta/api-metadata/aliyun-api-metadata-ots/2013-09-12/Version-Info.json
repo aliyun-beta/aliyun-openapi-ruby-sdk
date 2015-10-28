@@ -1,0 +1,41 @@
+{
+	"apiStyle":"RPC",
+	"apis":{
+		"apis":[
+			{
+				"name":"GetInstance"
+			},
+			{
+				"name":"DeleteUser"
+			},
+			{
+				"name":"DeleteInstance"
+			},
+			{
+				"name":"UpdateUser"
+			},
+			{
+				"name":"UpdateInstance"
+			},
+			{
+				"name":"ListInstance"
+			},
+			{
+				"name":"InsertUser"
+			},
+			{
+				"name":"InsertInstance"
+			},
+			{
+				"name":"GetUser"
+			}
+		]
+	},
+	"name":"2013-09-12",
+	"parameters":{
+		"parameters":[
+			
+		]
+	},
+	"product":"Ots"
+}

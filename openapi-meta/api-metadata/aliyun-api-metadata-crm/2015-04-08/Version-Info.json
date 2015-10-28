@@ -1,0 +1,24 @@
+{
+	"apiStyle":"RPC",
+	"apis":{
+		"apis":[
+			{
+				"name":"DeleteLabel"
+			},
+			{
+				"name":"CheckLabel"
+			},
+			{
+				"name":"AddLabel"
+			},
+			{
+				"name":"QueryCustomerLabel"
+			},
+			{
+				"name":"FindServiceManager"
+			}
+		]
+	},
+	"name":"2015-04-08",
+	"product":"Crm"
+}

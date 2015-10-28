@@ -1,0 +1,36 @@
+{
+	"apiStyle":"RPC",
+	"apis":{
+		"apis":[
+			{
+				"name":"GetImgVpcInfo"
+			},
+			{
+				"name":"DeleteImgVpc"
+			},
+			{
+				"name":"CreateImgVpc"
+			},
+			{
+				"name":"UnBindBucketVip"
+			},
+			{
+				"name":"GetOssVpcInfo"
+			},
+			{
+				"name":"GetBucketVips"
+			},
+			{
+				"name":"DeleteOssVpc"
+			},
+			{
+				"name":"CreateOssVpc"
+			},
+			{
+				"name":"BindBucketVip"
+			}
+		]
+	},
+	"name":"2015-05-20",
+	"product":"OssAdmin"
+}

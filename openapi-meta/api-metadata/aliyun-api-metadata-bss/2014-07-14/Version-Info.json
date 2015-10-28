@@ -1,0 +1,21 @@
+{
+	"apiStyle":"RPC",
+	"apis":{
+		"apis":[
+			{
+				"name":"SetResourceBusinessStatus"
+			},
+			{
+				"name":"DescribeCouponList"
+			},
+			{
+				"name":"DescribeCouponDetail"
+			},
+			{
+				"name":"DescribeCashDetail"
+			}
+		]
+	},
+	"name":"2014-07-14",
+	"product":"Bss"
+}

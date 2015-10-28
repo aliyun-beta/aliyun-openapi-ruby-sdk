@@ -1,0 +1,74 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"PutBucketStatus",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"false",
+				"tagName":"uid",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"bid",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"true",
+				"tagName":"Bucket",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"true",
+				"tagName":"Status",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"OwnerAccount",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"OssAdmin",
+	"resultMapping":{
+		"members":[
+			{
+				"tagName":"Code",
+				"type":"String"
+			},
+			{
+				"tagName":"Message",
+				"type":"String"
+			},
+			{
+				"tagName":"Success",
+				"type":"Boolean"
+			}
+		]
+	},
+	"version":"2013-07-12"
+}

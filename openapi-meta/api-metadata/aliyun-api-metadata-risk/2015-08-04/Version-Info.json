@@ -1,0 +1,24 @@
+{
+	"apiStyle":"RPC",
+	"apis":{
+		"apis":[
+			{
+				"name":"FindRisk"
+			},
+			{
+				"name":"WriteUssc"
+			},
+			{
+				"name":"ValidateVerifyCode"
+			},
+			{
+				"name":"SendVerifyCode"
+			},
+			{
+				"name":"QueryNameList"
+			}
+		]
+	},
+	"name":"2015-08-04",
+	"product":"Risk"
+}

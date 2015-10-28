@@ -1,0 +1,34 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTP"
+	},
+	"name":"drcGuidRouteApi",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"true",
+				"tagName":"guid",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Dts",
+	"resultMapping":{
+		"members":[
+			{
+				"tagName":"success",
+				"type":"Boolean"
+			},
+			{
+				"tagName":"data",
+				"type":"String"
+			}
+		]
+	},
+	"version":"2015-06-29"
+}

@@ -1,0 +1,27 @@
+{
+	"isvProtocol":{
+		"method":"POST",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"DeleteInstance",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"true",
+				"tagName":"InstanceName",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Ots",
+	"resultMapping":{
+		"members":[
+			
+		]
+	},
+	"version":"2013-09-12"
+}

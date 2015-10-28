@@ -1,0 +1,61 @@
+{
+	"isvProtocol":{
+		"method":"DELETE",
+		"pattern":"/projects/[ProjectName]/alerts/[AlertName]/dimensions/[DimensionsId]",
+		"protocol":"HTTP"
+	},
+	"name":"DeleteDimensions",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"true",
+				"tagName":"ProjectName",
+				"tagPosition":"Path",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"true",
+				"tagName":"AlertName",
+				"tagPosition":"Path",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"true",
+				"tagName":"DimensionsId",
+				"tagPosition":"Path",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Alert",
+	"resultMapping":{
+		"members":[
+			{
+				"tagName":"code",
+				"type":"String"
+			},
+			{
+				"tagName":"message",
+				"type":"String"
+			},
+			{
+				"tagName":"success",
+				"type":"String"
+			},
+			{
+				"tagName":"traceId",
+				"type":"String"
+			}
+		]
+	},
+	"version":"2015-08-15"
+}

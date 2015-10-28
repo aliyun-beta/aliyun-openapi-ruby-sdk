@@ -1,0 +1,70 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"DescribeRegions4Location",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"false",
+				"tagName":"OwnerId",
+				"tagPosition":"Query",
+				"type":"Long",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"ResourceOwnerAccount",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"ResourceOwnerId",
+				"tagPosition":"Query",
+				"type":"Long",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"OwnerAccount",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Slb",
+	"resultMapping":{
+		"arrays":[
+			{
+				"itemName":"Region",
+				"members":[
+					{
+						"tagName":"RegionId",
+						"type":"String"
+					},
+					{
+						"tagName":"LocalName",
+						"type":"String"
+					}
+				],
+				"tagName":"Regions"
+			}
+		],
+		"members":[
+			
+		]
+	},
+	"version":"2014-05-15"
+}

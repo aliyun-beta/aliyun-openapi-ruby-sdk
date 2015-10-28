@@ -1,0 +1,54 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"ReportVuser",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"true",
+				"tagName":"Wskey",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"true",
+				"tagName":"ScenarioId",
+				"tagPosition":"Query",
+				"type":"Integer",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"true",
+				"tagName":"Vuser",
+				"tagPosition":"Query",
+				"type":"Integer",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"true",
+				"tagName":"GmtCreated",
+				"tagPosition":"Query",
+				"type":"Long",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"PTS",
+	"resultMapping":{
+		"members":[
+			
+		]
+	},
+	"version":"2015-08-01"
+}

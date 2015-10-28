@@ -1,0 +1,84 @@
+{
+	"isvProtocol":{
+		"method":"GET",
+		"protocol":"HTTP"
+	},
+	"name":"ListMetrics",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"false",
+				"tagName":"ProjectName",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"MetricStreamName",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"MetricName",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"Page",
+				"tagPosition":"Query",
+				"type":"Long",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"PageSize",
+				"tagPosition":"Query",
+				"type":"Long",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Cms",
+	"resultMapping":{
+		"lists":[
+			{
+				"itemName":"Datapoint",
+				"tagName":"Datapoints"
+			}
+		],
+		"members":[
+			{
+				"tagName":"Code",
+				"type":"String"
+			},
+			{
+				"tagName":"Message",
+				"type":"String"
+			},
+			{
+				"tagName":"Success",
+				"type":"String"
+			},
+			{
+				"tagName":"TraceId",
+				"type":"String"
+			}
+		]
+	},
+	"version":"2015-08-01"
+}

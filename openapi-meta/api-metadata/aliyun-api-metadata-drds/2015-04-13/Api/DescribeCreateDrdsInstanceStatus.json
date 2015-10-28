@@ -1,0 +1,41 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"DescribeCreateDrdsInstanceStatus",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"true",
+				"tagName":"DrdsInstanceId",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Drds",
+	"resultMapping":{
+		"members":[
+			{
+				"tagName":"Success",
+				"type":"Boolean"
+			}
+		],
+		"structs":[
+			{
+				"members":[
+					{
+						"tagName":"Status",
+						"type":"String"
+					}
+				],
+				"tagName":"Data"
+			}
+		]
+	},
+	"version":"2015-04-13"
+}

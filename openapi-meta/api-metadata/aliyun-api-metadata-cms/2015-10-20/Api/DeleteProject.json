@@ -1,0 +1,42 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTP"
+	},
+	"name":"DeleteProject",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"false",
+				"tagName":"ProjectName",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Cms",
+	"resultMapping":{
+		"members":[
+			{
+				"tagName":"Code",
+				"type":"String"
+			},
+			{
+				"tagName":"Message",
+				"type":"String"
+			},
+			{
+				"tagName":"Success",
+				"type":"String"
+			},
+			{
+				"tagName":"TraceId",
+				"type":"String"
+			}
+		]
+	},
+	"version":"2015-10-20"
+}

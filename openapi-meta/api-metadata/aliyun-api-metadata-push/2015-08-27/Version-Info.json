@@ -1,0 +1,18 @@
+{
+	"apiStyle":"RPC",
+	"apis":{
+		"apis":[
+			{
+				"name":"BatchGetDevicesInfo"
+			},
+			{
+				"name":"RevertRpc"
+			},
+			{
+				"name":"PushByteMessage"
+			}
+		]
+	},
+	"name":"2015-08-27",
+	"product":"Push"
+}

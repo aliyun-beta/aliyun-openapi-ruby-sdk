@@ -1,0 +1,60 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"JobResource",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"true",
+				"tagName":"Bucket",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"Path",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Emr",
+	"resultMapping":{
+		"arrays":[
+			{
+				"itemName":"JobResourceInfo",
+				"members":[
+					{
+						"tagName":"Type",
+						"type":"Integer"
+					},
+					{
+						"tagName":"Filename",
+						"type":"String"
+					},
+					{
+						"tagName":"Size",
+						"type":"Long"
+					},
+					{
+						"tagName":"Region",
+						"type":"String"
+					}
+				],
+				"tagName":"JobResourceInfoList"
+			}
+		],
+		"members":[
+			
+		]
+	},
+	"version":"2015-09-10"
+}

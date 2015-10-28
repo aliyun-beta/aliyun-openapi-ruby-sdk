@@ -1,0 +1,33 @@
+{
+	"apiStyle":"RPC",
+	"apis":{
+		"apis":[
+			{
+				"name":"RemoveUser"
+			},
+			{
+				"name":"PutUserPolicy"
+			},
+			{
+				"name":"ListUsers"
+			},
+			{
+				"name":"ListUserPolicies"
+			},
+			{
+				"name":"GetUserPolicy"
+			},
+			{
+				"name":"GetUser"
+			},
+			{
+				"name":"DeleteUserPolicy"
+			},
+			{
+				"name":"AddUser"
+			}
+		]
+	},
+	"name":"2014-02-14",
+	"product":"Ram"
+}

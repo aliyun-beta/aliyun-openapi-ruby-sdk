@@ -1,0 +1,39 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"CreateTransaction",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"true",
+				"tagName":"ScriptId",
+				"tagPosition":"Query",
+				"type":"Integer",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"true",
+				"tagName":"TransactionName",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"PTS",
+	"resultMapping":{
+		"members":[
+			{
+				"tagName":"TransactionId",
+				"type":"Integer"
+			}
+		]
+	},
+	"version":"2015-08-01"
+}

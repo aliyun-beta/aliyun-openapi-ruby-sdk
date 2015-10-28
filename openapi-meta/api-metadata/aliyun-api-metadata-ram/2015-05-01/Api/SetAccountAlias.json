@@ -1,0 +1,27 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTPS"
+	},
+	"name":"SetAccountAlias",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"false",
+				"tagName":"AccountAlias",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Ram",
+	"resultMapping":{
+		"members":[
+			
+		]
+	},
+	"version":"2015-05-01"
+}

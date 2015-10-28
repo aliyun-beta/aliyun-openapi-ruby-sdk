@@ -1,0 +1,48 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"CheckLabel",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"false",
+				"tagName":"PK",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"LabelName",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"LabelSeries",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Crm",
+	"resultMapping":{
+		"members":[
+			{
+				"tagName":"Result",
+				"type":"Boolean"
+			}
+		]
+	},
+	"version":"2015-04-08"
+}

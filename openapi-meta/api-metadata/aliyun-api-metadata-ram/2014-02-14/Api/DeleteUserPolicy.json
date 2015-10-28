@@ -1,0 +1,36 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTPS"
+	},
+	"name":"DeleteUserPolicy",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"true",
+				"tagName":"UserName",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"true",
+				"tagName":"PolicyName",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Ram",
+	"resultMapping":{
+		"members":[
+			
+		]
+	},
+	"version":"2014-02-14"
+}

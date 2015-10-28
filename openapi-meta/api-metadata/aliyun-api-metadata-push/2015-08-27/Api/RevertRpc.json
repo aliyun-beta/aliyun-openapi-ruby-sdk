@@ -1,0 +1,61 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"RevertRpc",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"true",
+				"tagName":"AppId",
+				"tagPosition":"Query",
+				"type":"Long",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"true",
+				"tagName":"DeviceId",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"true",
+				"tagName":"RpcContent",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"true",
+				"tagName":"TimeOut",
+				"tagPosition":"Query",
+				"type":"Integer",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Push",
+	"resultMapping":{
+		"members":[
+			{
+				"tagName":"RpcCode",
+				"type":"String"
+			},
+			{
+				"tagName":"ResponseContent",
+				"type":"String"
+			}
+		]
+	},
+	"version":"2015-08-27"
+}

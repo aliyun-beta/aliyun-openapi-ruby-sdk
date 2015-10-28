@@ -1,0 +1,78 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"DeleteCNameWaf",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"true",
+				"tagName":"InstanceId",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"true",
+				"tagName":"Domain",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"true",
+				"tagName":"CnameId",
+				"tagPosition":"Query",
+				"type":"Integer",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"InstanceType",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Yundun",
+	"resultMapping":{
+		"arrays":[
+			{
+				"itemName":"WafInfo",
+				"members":[
+					{
+						"tagName":"Id",
+						"type":"Integer"
+					},
+					{
+						"tagName":"Domain",
+						"type":"String"
+					},
+					{
+						"tagName":"Cname",
+						"type":"String"
+					},
+					{
+						"tagName":"Status",
+						"type":"Integer"
+					}
+				],
+				"tagName":"WafInfoList"
+			}
+		],
+		"members":[
+			
+		]
+	},
+	"version":"2015-04-16"
+}

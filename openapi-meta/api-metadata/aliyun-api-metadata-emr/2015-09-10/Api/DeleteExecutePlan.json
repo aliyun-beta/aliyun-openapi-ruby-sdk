@@ -1,0 +1,28 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"DeleteExecutePlan",
+	"parameters":{
+		"parameters":[
+			{
+				"minValue":"1",
+				"required":"false",
+				"tagName":"Id",
+				"tagPosition":"Query",
+				"type":"Long",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Emr",
+	"resultMapping":{
+		"members":[
+			
+		]
+	},
+	"version":"2015-09-10"
+}

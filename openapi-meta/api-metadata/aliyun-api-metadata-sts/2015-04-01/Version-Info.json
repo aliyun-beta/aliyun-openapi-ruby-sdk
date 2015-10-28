@@ -1,0 +1,18 @@
+{
+	"apiStyle":"RPC",
+	"apis":{
+		"apis":[
+			{
+				"name":"AssumeRoleWithServiceIdentity"
+			},
+			{
+				"name":"AssumeRole"
+			},
+			{
+				"name":"GetFederationToken"
+			}
+		]
+	},
+	"name":"2015-04-01",
+	"product":"Sts"
+}

@@ -1,0 +1,24 @@
+{
+	"apiStyle":"RPC",
+	"apis":{
+		"apis":[
+			{
+				"name":"PutBucketStatus"
+			},
+			{
+				"name":"PutBucketPolicy"
+			},
+			{
+				"name":"PutBucketLimit"
+			},
+			{
+				"name":"GetBucketPolicy"
+			},
+			{
+				"name":"createOssInstance"
+			}
+		]
+	},
+	"name":"2013-07-12",
+	"product":"OssAdmin"
+}

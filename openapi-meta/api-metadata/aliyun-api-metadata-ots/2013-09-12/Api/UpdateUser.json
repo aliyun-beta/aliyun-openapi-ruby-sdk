@@ -1,0 +1,36 @@
+{
+	"isvProtocol":{
+		"method":"POST",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"UpdateUser",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"false",
+				"tagName":"InstanceQuota",
+				"tagPosition":"Query",
+				"type":"Integer",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"Description",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Ots",
+	"resultMapping":{
+		"members":[
+			
+		]
+	},
+	"version":"2013-09-12"
+}

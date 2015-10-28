@@ -1,0 +1,35 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTPS"
+	},
+	"name":"GetSecurityPreference",
+	"parameters":{
+		"parameters":[
+			
+		]
+	},
+	"product":"Ram",
+	"resultMapping":{
+		"members":[
+			
+		],
+		"structs":[
+			{
+				"structs":[
+					{
+						"members":[
+							{
+								"tagName":"EnableSaveMFATicket",
+								"type":"Boolean"
+							}
+						],
+						"tagName":"LoginProfilePreference"
+					}
+				],
+				"tagName":"SecurityPreference"
+			}
+		]
+	},
+	"version":"2015-05-01"
+}

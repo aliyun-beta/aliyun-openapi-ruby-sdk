@@ -1,0 +1,26 @@
+{
+	"isvProtocol":{
+		"method":"DELETE",
+		"pattern":"/jobs/[ResourceName]",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"DeleteJob",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"true",
+				"tagName":"ResourceName",
+				"tagPosition":"Path",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"BatchCompute",
+	"resultMapping":{
+		
+	},
+	"version":"2015-06-30"
+}

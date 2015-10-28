@@ -1,0 +1,47 @@
+{
+	"isvProtocol":{
+		"method":"POST",
+		"pattern":"/projects",
+		"protocol":"HTTP"
+	},
+	"name":"CreateProject",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"false",
+				"tagName":"Project",
+				"tagPosition":"Body",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Alert",
+	"resultMapping":{
+		"members":[
+			{
+				"tagName":"code",
+				"type":"String"
+			},
+			{
+				"tagName":"message",
+				"type":"String"
+			},
+			{
+				"tagName":"success",
+				"type":"String"
+			},
+			{
+				"tagName":"traceId",
+				"type":"String"
+			},
+			{
+				"tagName":"result",
+				"type":"String"
+			}
+		]
+	},
+	"version":"2015-08-15"
+}

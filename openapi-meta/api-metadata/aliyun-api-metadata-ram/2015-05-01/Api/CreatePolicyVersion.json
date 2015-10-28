@@ -1,0 +1,68 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTPS"
+	},
+	"name":"CreatePolicyVersion",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"false",
+				"tagName":"PolicyName",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"PolicyDocument",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"SetAsDefault",
+				"tagPosition":"Query",
+				"type":"Boolean",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Ram",
+	"resultMapping":{
+		"members":[
+			
+		],
+		"structs":[
+			{
+				"members":[
+					{
+						"tagName":"VersionId",
+						"type":"String"
+					},
+					{
+						"tagName":"IsDefaultVersion",
+						"type":"Boolean"
+					},
+					{
+						"tagName":"PolicyDocument",
+						"type":"String"
+					},
+					{
+						"tagName":"CreateDate",
+						"type":"String"
+					}
+				],
+				"tagName":"PolicyVersion"
+			}
+		]
+	},
+	"version":"2015-05-01"
+}

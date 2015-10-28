@@ -1,0 +1,27 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTPS"
+	},
+	"name":"DeleteRole",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"false",
+				"tagName":"RoleName",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Ram",
+	"resultMapping":{
+		"members":[
+			
+		]
+	},
+	"version":"2015-05-01"
+}

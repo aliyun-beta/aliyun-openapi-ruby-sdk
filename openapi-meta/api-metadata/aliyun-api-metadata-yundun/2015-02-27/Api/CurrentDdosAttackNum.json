@@ -1,0 +1,22 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"CurrentDdosAttackNum",
+	"parameters":{
+		"parameters":[
+			
+		]
+	},
+	"product":"Yundun",
+	"resultMapping":{
+		"members":[
+			{
+				"tagName":"CurrentDdosAttackNum",
+				"type":"Long"
+			}
+		]
+	},
+	"version":"2015-02-27"
+}

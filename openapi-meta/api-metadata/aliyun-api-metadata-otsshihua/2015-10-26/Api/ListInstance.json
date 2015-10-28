@@ -1,0 +1,35 @@
+{
+	"isvProtocol":{
+		"method":"GET",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"ListInstance",
+	"parameters":{
+		"parameters":[
+			
+		]
+	},
+	"product":"OtsShihua",
+	"resultMapping":{
+		"arrays":[
+			{
+				"itemName":"InstanceInfo",
+				"members":[
+					{
+						"tagName":"InstanceName",
+						"type":"String"
+					},
+					{
+						"tagName":"Timestamp",
+						"type":"String"
+					}
+				],
+				"tagName":"InstanceInfos"
+			}
+		],
+		"members":[
+			
+		]
+	},
+	"version":"2015-10-26"
+}

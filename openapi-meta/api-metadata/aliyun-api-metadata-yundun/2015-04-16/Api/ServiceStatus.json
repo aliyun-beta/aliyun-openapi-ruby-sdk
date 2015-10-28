@@ -1,0 +1,34 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"ServiceStatus",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"true",
+				"tagName":"InstanceId",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Yundun",
+	"resultMapping":{
+		"members":[
+			{
+				"tagName":"PortScan",
+				"type":"Boolean"
+			},
+			{
+				"tagName":"VulScan",
+				"type":"Boolean"
+			}
+		]
+	},
+	"version":"2015-04-16"
+}

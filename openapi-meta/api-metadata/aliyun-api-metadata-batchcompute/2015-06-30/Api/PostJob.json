@@ -1,0 +1,18 @@
+{
+	"isvProtocol":{
+		"method":"POST",
+		"pattern":"/jobs",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"PostJob",
+	"parameters":{
+		"parameters":[
+			
+		]
+	},
+	"product":"BatchCompute",
+	"resultMapping":{
+		
+	},
+	"version":"2015-06-30"
+}

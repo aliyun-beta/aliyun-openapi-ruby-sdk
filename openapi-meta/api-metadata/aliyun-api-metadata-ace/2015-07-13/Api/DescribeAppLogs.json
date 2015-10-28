@@ -1,0 +1,86 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"DescribeAppLogs",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"true",
+				"tagName":"AppId",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"true",
+				"tagName":"StartTime",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"true",
+				"tagName":"EndTime",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"maxValue":"100",
+				"minValue":"1",
+				"required":"false",
+				"tagName":"PageSize",
+				"tagPosition":"Query",
+				"type":"Integer",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"maxValue":"2147483647",
+				"minValue":"1",
+				"required":"false",
+				"tagName":"PageNumber",
+				"tagPosition":"Query",
+				"type":"Integer",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Ace",
+	"resultMapping":{
+		"arrays":[
+			{
+				"itemName":"AppLog",
+				"members":[
+					{
+						"tagName":"LogTime",
+						"type":"String"
+					},
+					{
+						"tagName":"LogContent",
+						"type":"String"
+					}
+				],
+				"tagName":"Items"
+			}
+		],
+		"members":[
+			{
+				"tagName":"PageRecordCount",
+				"type":"Integer"
+			}
+		]
+	},
+	"version":"2015-07-13"
+}

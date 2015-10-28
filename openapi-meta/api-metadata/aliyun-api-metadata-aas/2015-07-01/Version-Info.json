@@ -1,0 +1,35 @@
+{
+	"apiStyle":"RPC",
+	"apis":{
+		"apis":[
+			{
+				"name":"DeleteAccessKeyForAccount"
+			},
+			{
+				"name":"CreateAliyunAccount"
+			},
+			{
+				"name":"CreateAccessKeyForAccount"
+			},
+			{
+				"name":"UpdatePasswordForAccount"
+			},
+			{
+				"name":"UpdateAccessKeyStatusForAccount"
+			},
+			{
+				"name":"ListAccessKeysForAccount"
+			},
+			{
+				"name":"GetBasicInfoForAccount"
+			}
+		]
+	},
+	"name":"2015-07-01",
+	"parameters":{
+		"parameters":[
+			
+		]
+	},
+	"product":"Aas"
+}

@@ -1,0 +1,55 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTPS"
+	},
+	"name":"CreateGroup",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"false",
+				"tagName":"GroupName",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"Comments",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Ram",
+	"resultMapping":{
+		"members":[
+			
+		],
+		"structs":[
+			{
+				"members":[
+					{
+						"tagName":"GroupName",
+						"type":"String"
+					},
+					{
+						"tagName":"Comments",
+						"type":"String"
+					},
+					{
+						"tagName":"CreateDate",
+						"type":"String"
+					}
+				],
+				"tagName":"Group"
+			}
+		]
+	},
+	"version":"2015-05-01"
+}

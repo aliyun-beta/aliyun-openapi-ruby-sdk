@@ -1,0 +1,141 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"CheckAutoSnapshotPolicy",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"false",
+				"tagName":"OwnerId",
+				"tagPosition":"Query",
+				"type":"Long",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"ResourceOwnerAccount",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"ResourceOwnerId",
+				"tagPosition":"Query",
+				"type":"Long",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"OwnerAccount",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"SystemDiskPolicyEnabled",
+				"tagPosition":"Query",
+				"type":"Boolean",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"maxValue":"4",
+				"minValue":"1",
+				"required":"false",
+				"tagName":"SystemDiskPolicyTimePeriod",
+				"tagPosition":"Query",
+				"type":"Integer",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"maxValue":"3",
+				"minValue":"1",
+				"required":"false",
+				"tagName":"SystemDiskPolicyRetentionDays",
+				"tagPosition":"Query",
+				"type":"Integer",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"SystemDiskPolicyRetentionLastWeek",
+				"tagPosition":"Query",
+				"type":"Boolean",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"DataDiskPolicyEnabled",
+				"tagPosition":"Query",
+				"type":"Boolean",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"maxValue":"4",
+				"minValue":"1",
+				"required":"false",
+				"tagName":"DataDiskPolicyTimePeriod",
+				"tagPosition":"Query",
+				"type":"Integer",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"maxValue":"3",
+				"minValue":"1",
+				"required":"false",
+				"tagName":"DataDiskPolicyRetentionDays",
+				"tagPosition":"Query",
+				"type":"Integer",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"DataDiskPolicyRetentionLastWeek",
+				"tagPosition":"Query",
+				"type":"Boolean",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Ecs",
+	"resultMapping":{
+		"members":[
+			{
+				"tagName":"AutoSnapshotOccupation",
+				"type":"Integer"
+			},
+			{
+				"tagName":"IsPermittedModify",
+				"type":"String"
+			}
+		]
+	},
+	"version":"2014-05-26"
+}

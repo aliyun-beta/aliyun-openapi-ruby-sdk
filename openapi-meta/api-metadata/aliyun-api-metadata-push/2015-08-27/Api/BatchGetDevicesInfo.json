@@ -1,0 +1,53 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"BatchGetDevicesInfo",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"true",
+				"tagName":"Devices",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"true",
+				"tagName":"AppId",
+				"tagPosition":"Query",
+				"type":"Long",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Push",
+	"resultMapping":{
+		"arrays":[
+			{
+				"itemName":"DeviceInfo",
+				"members":[
+					{
+						"tagName":"DeviceId",
+						"type":"String"
+					},
+					{
+						"tagName":"IsOnline",
+						"type":"Boolean"
+					},
+					{
+						"tagName":"Status",
+						"type":"Integer"
+					}
+				],
+				"tagName":"DeviceInfos"
+			}
+		]
+	},
+	"version":"2015-08-27"
+}

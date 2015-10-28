@@ -1,0 +1,30 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"GetTasks",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"false",
+				"tagName":"Status",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"PTS",
+	"resultMapping":{
+		"members":[
+			{
+				"tagName":"Tasks",
+				"type":"String"
+			}
+		]
+	},
+	"version":"2015-08-01"
+}

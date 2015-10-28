@@ -1,0 +1,38 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTPS"
+	},
+	"name":"GetUserMFAInfo",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"false",
+				"tagName":"UserName",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Ram",
+	"resultMapping":{
+		"members":[
+			
+		],
+		"structs":[
+			{
+				"members":[
+					{
+						"tagName":"SerialNumber",
+						"type":"String"
+					}
+				],
+				"tagName":"MFADevice"
+			}
+		]
+	},
+	"version":"2015-05-01"
+}

@@ -1,0 +1,26 @@
+{
+	"isvProtocol":{
+		"method":"PUT",
+		"pattern":"/jobs/[ResourceName]?Action=Stop",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"StopJob",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"true",
+				"tagName":"ResourceName",
+				"tagPosition":"Path",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"BatchCompute",
+	"resultMapping":{
+		
+	},
+	"version":"2015-06-30"
+}

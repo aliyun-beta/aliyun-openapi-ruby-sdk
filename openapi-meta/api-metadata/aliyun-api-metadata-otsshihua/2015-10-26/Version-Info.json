@@ -1,0 +1,26 @@
+{
+	"apiStyle":"RPC",
+	"apis":{
+		"apis":[
+			{
+				"name":"ListInstance"
+			},
+			{
+				"name":"InsertInstance"
+			},
+			{
+				"name":"GetInstance"
+			},
+			{
+				"name":"DeleteInstance"
+			}
+		]
+	},
+	"name":"2015-10-26",
+	"parameters":{
+		"parameters":[
+			
+		]
+	},
+	"product":"OtsShihua"
+}

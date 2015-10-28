@@ -1,0 +1,74 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"DescribeInstanceTypes",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"false",
+				"tagName":"OwnerId",
+				"tagPosition":"Query",
+				"type":"Long",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"ResourceOwnerAccount",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"ResourceOwnerId",
+				"tagPosition":"Query",
+				"type":"Long",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"OwnerAccount",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Ecs",
+	"resultMapping":{
+		"arrays":[
+			{
+				"itemName":"InstanceType",
+				"members":[
+					{
+						"tagName":"InstanceTypeId",
+						"type":"String"
+					},
+					{
+						"tagName":"CpuCoreCount",
+						"type":"Integer"
+					},
+					{
+						"tagName":"MemorySize",
+						"type":"Float"
+					}
+				],
+				"tagName":"InstanceTypes"
+			}
+		],
+		"members":[
+			
+		]
+	},
+	"version":"2014-05-26"
+}

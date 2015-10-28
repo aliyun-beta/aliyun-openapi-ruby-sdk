@@ -1,0 +1,49 @@
+{
+	"isvProtocol":{
+		"method":"GET",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"GetUser",
+	"parameters":{
+		"parameters":[
+			
+		]
+	},
+	"product":"OtsFinance",
+	"resultMapping":{
+		"members":[
+			
+		],
+		"structs":[
+			{
+				"members":[
+					{
+						"tagName":"UserId",
+						"type":"String"
+					},
+					{
+						"tagName":"Description",
+						"type":"String"
+					},
+					{
+						"tagName":"CreateTime",
+						"type":"String"
+					}
+				],
+				"structs":[
+					{
+						"members":[
+							{
+								"tagName":"InstanceQuota",
+								"type":"Integer"
+							}
+						],
+						"tagName":"Quota"
+					}
+				],
+				"tagName":"UserInfo"
+			}
+		]
+	},
+	"version":"2013-09-12"
+}

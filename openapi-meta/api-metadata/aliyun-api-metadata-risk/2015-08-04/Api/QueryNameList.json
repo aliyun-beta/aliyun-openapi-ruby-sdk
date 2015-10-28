@@ -1,0 +1,86 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"QueryNameList",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"true",
+				"tagName":"Type",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"true",
+				"tagName":"DataType",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"true",
+				"tagName":"DataValue",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"true",
+				"tagName":"QueryLike",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"Extend",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Risk",
+	"resultMapping":{
+		"arrays":[
+			{
+				"itemName":"RiskName",
+				"members":[
+					{
+						"tagName":"Type",
+						"type":"String"
+					},
+					{
+						"tagName":"DataType",
+						"type":"String"
+					},
+					{
+						"tagName":"DataValue",
+						"type":"String"
+					}
+				],
+				"tagName":"RiskNameLists"
+			}
+		],
+		"members":[
+			{
+				"tagName":"Code",
+				"type":"String"
+			}
+		]
+	},
+	"version":"2015-08-04"
+}

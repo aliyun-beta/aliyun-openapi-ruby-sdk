@@ -1,0 +1,37 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"ModifyClusterName",
+	"parameters":{
+		"parameters":[
+			{
+				"minValue":"1",
+				"required":"true",
+				"tagName":"ClusterId",
+				"tagPosition":"Query",
+				"type":"Long",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"true",
+				"tagName":"ClusterName",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Emr",
+	"resultMapping":{
+		"members":[
+			
+		]
+	},
+	"version":"2015-09-10"
+}

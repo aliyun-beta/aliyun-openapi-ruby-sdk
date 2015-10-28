@@ -1,0 +1,12 @@
+{
+	"apiStyle":"RPC",
+	"apis":{
+		"apis":[
+			{
+				"name":"DescribeMetricDatum"
+			}
+		]
+	},
+	"name":"2015-04-20",
+	"product":"Cms"
+}

@@ -1,0 +1,22 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"TodayAllpps",
+	"parameters":{
+		"parameters":[
+			
+		]
+	},
+	"product":"Yundun",
+	"resultMapping":{
+		"members":[
+			{
+				"tagName":"Pps",
+				"type":"Long"
+			}
+		]
+	},
+	"version":"2015-02-27"
+}

@@ -1,0 +1,18 @@
+{
+	"isvProtocol":{
+		"method":"GET",
+		"pattern":"/jobs",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"ListJobs",
+	"parameters":{
+		"parameters":[
+			
+		]
+	},
+	"product":"BatchCompute",
+	"resultMapping":{
+		
+	},
+	"version":"2015-06-30"
+}

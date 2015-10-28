@@ -1,0 +1,26 @@
+{
+	"isvProtocol":{
+		"method":"PUT",
+		"pattern":"/jobs/[ResourceName]/Priority",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"PutJob",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"true",
+				"tagName":"ResourceName",
+				"tagPosition":"Path",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"BatchCompute",
+	"resultMapping":{
+		
+	},
+	"version":"2013-01-11"
+}

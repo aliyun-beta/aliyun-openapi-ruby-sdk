@@ -1,0 +1,46 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTPS"
+	},
+	"name":"CreateVirtualMFADevice",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"false",
+				"tagName":"VirtualMFADeviceName",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Ram",
+	"resultMapping":{
+		"members":[
+			
+		],
+		"structs":[
+			{
+				"members":[
+					{
+						"tagName":"SerialNumber",
+						"type":"String"
+					},
+					{
+						"tagName":"Base32StringSeed",
+						"type":"String"
+					},
+					{
+						"tagName":"QRCodePNG",
+						"type":"String"
+					}
+				],
+				"tagName":"VirtualMFADevice"
+			}
+		]
+	},
+	"version":"2015-05-01"
+}

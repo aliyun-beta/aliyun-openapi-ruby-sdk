@@ -1,0 +1,54 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTPS"
+	},
+	"name":"ListVirtualMFADevices",
+	"parameters":{
+		"parameters":[
+			
+		]
+	},
+	"product":"Ram",
+	"resultMapping":{
+		"arrays":[
+			{
+				"itemName":"VirtualMFADevice",
+				"members":[
+					{
+						"tagName":"SerialNumber",
+						"type":"String"
+					},
+					{
+						"tagName":"ActivateDate",
+						"type":"String"
+					}
+				],
+				"structs":[
+					{
+						"members":[
+							{
+								"tagName":"UserId",
+								"type":"String"
+							},
+							{
+								"tagName":"UserName",
+								"type":"String"
+							},
+							{
+								"tagName":"DisplayName",
+								"type":"String"
+							}
+						],
+						"tagName":"User"
+					}
+				],
+				"tagName":"VirtualMFADevices"
+			}
+		],
+		"members":[
+			
+		]
+	},
+	"version":"2015-05-01"
+}

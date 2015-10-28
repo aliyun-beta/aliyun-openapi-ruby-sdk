@@ -1,0 +1,50 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTPS"
+	},
+	"name":"CreateAccessKey",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"false",
+				"tagName":"UserName",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Ram",
+	"resultMapping":{
+		"members":[
+			
+		],
+		"structs":[
+			{
+				"members":[
+					{
+						"tagName":"AccessKeyId",
+						"type":"String"
+					},
+					{
+						"tagName":"AccessKeySecret",
+						"type":"String"
+					},
+					{
+						"tagName":"Status",
+						"type":"String"
+					},
+					{
+						"tagName":"CreateDate",
+						"type":"String"
+					}
+				],
+				"tagName":"AccessKey"
+			}
+		]
+	},
+	"version":"2015-05-01"
+}

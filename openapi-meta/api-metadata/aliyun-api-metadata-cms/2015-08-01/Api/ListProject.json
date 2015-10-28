@@ -1,0 +1,66 @@
+{
+	"isvProtocol":{
+		"method":"GET",
+		"protocol":"HTTP"
+	},
+	"name":"ListProject",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"false",
+				"tagName":"ProjectOwner",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"Page",
+				"tagPosition":"Query",
+				"type":"Long",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"PageSize",
+				"tagPosition":"Query",
+				"type":"Long",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Cms",
+	"resultMapping":{
+		"lists":[
+			{
+				"itemName":"Datapoint",
+				"tagName":"Datapoints"
+			}
+		],
+		"members":[
+			{
+				"tagName":"Code",
+				"type":"String"
+			},
+			{
+				"tagName":"Message",
+				"type":"String"
+			},
+			{
+				"tagName":"Success",
+				"type":"String"
+			},
+			{
+				"tagName":"TraceId",
+				"type":"String"
+			}
+		]
+	},
+	"version":"2015-08-01"
+}

@@ -1,0 +1,26 @@
+{
+	"isvProtocol":{
+		"method":"GET",
+		"pattern":"/jobs/[ResourceName]/tasks",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"GetTasks",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"true",
+				"tagName":"ResourceName",
+				"tagPosition":"Path",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"BatchCompute",
+	"resultMapping":{
+		
+	},
+	"version":"2015-06-30"
+}

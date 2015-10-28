@@ -1,0 +1,83 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"DescribeZones",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"false",
+				"tagName":"OwnerId",
+				"tagPosition":"Query",
+				"type":"Long",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"ResourceOwnerAccount",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"ResourceOwnerId",
+				"tagPosition":"Query",
+				"type":"Long",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"OwnerAccount",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"ZoneId",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Ocs",
+	"resultMapping":{
+		"arrays":[
+			{
+				"itemName":"OcsZone",
+				"members":[
+					{
+						"tagName":"ZoneId",
+						"type":"String"
+					},
+					{
+						"tagName":"Name",
+						"type":"String"
+					},
+					{
+						"tagName":"Description",
+						"type":"String"
+					}
+				],
+				"tagName":"Zones"
+			}
+		],
+		"members":[
+			
+		]
+	},
+	"version":"2015-03-01"
+}

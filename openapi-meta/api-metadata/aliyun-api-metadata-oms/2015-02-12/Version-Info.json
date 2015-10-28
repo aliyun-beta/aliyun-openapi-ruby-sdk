@@ -1,0 +1,15 @@
+{
+	"apiStyle":"RPC",
+	"apis":{
+		"apis":[
+			{
+				"name":"GetProductDefine"
+			},
+			{
+				"name":"GetUserData"
+			}
+		]
+	},
+	"name":"2015-02-12",
+	"product":"Oms"
+}

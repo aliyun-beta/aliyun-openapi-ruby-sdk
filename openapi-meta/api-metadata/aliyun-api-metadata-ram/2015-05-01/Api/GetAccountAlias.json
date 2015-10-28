@@ -1,0 +1,22 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTPS"
+	},
+	"name":"GetAccountAlias",
+	"parameters":{
+		"parameters":[
+			
+		]
+	},
+	"product":"Ram",
+	"resultMapping":{
+		"members":[
+			{
+				"tagName":"AccountAlias",
+				"type":"String"
+			}
+		]
+	},
+	"version":"2015-05-01"
+}

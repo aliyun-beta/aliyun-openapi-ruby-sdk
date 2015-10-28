@@ -1,0 +1,24 @@
+{
+	"apiStyle":"RPC",
+	"apis":{
+		"apis":[
+			{
+				"name":"DescribeBusinessStatus"
+			},
+			{
+				"name":"SetUserSecurityStatus"
+			},
+			{
+				"name":"SetUserBusinessStatuses"
+			},
+			{
+				"name":"NotifyUserBusinessCommand"
+			},
+			{
+				"name":"DescribeUserBusinessStatus"
+			}
+		]
+	},
+	"name":"2015-06-23",
+	"product":"Ubsms-inner"
+}

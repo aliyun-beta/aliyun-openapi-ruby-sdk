@@ -1,0 +1,15 @@
+{
+	"apiStyle":"RPC",
+	"apis":{
+		"apis":[
+			{
+				"name":"stopOss"
+			},
+			{
+				"name":"restartOss"
+			}
+		]
+	},
+	"name":"2014-03-26",
+	"product":"OssAdmin"
+}

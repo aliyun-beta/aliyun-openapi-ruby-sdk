@@ -1,0 +1,17 @@
+{
+	"apiStyle":"RPC",
+	"apis":{
+		"apis":[
+			{
+				"name":"drcGuidRouteApi"
+			}
+		]
+	},
+	"name":"2015-06-29",
+	"parameters":{
+		"parameters":[
+			
+		]
+	},
+	"product":"Dts"
+}

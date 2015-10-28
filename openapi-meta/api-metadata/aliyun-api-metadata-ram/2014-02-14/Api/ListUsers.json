@@ -1,0 +1,35 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTPS"
+	},
+	"name":"ListUsers",
+	"parameters":{
+		"parameters":[
+			
+		]
+	},
+	"product":"Ram",
+	"resultMapping":{
+		"arrays":[
+			{
+				"itemName":"User",
+				"members":[
+					{
+						"tagName":"UserName",
+						"type":"String"
+					},
+					{
+						"tagName":"Comments",
+						"type":"String"
+					}
+				],
+				"tagName":"Users"
+			}
+		],
+		"members":[
+			
+		]
+	},
+	"version":"2014-02-14"
+}

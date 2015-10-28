@@ -1,0 +1,74 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"DescribeLoadBalancers",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"false",
+				"tagName":"ServerId",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"LoadBalancerId",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"HostId",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"OwnerAccount",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Slb",
+	"resultMapping":{
+		"arrays":[
+			{
+				"itemName":"LoadBalancer",
+				"members":[
+					{
+						"tagName":"LoadBalancerId",
+						"type":"String"
+					},
+					{
+						"tagName":"LoadBalancerName",
+						"type":"String"
+					},
+					{
+						"tagName":"LoadBalancerStatus",
+						"type":"String"
+					}
+				],
+				"tagName":"LoadBalancers"
+			}
+		],
+		"members":[
+			
+		]
+	},
+	"version":"2013-02-21"
+}

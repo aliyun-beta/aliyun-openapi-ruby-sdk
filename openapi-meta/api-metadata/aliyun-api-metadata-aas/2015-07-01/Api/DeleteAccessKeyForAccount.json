@@ -1,0 +1,53 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"DeleteAccessKeyForAccount",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"false",
+				"tagName":"PK",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"AKId",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Aas",
+	"resultMapping":{
+		"members":[
+			{
+				"tagName":"PK",
+				"type":"String"
+			},
+			{
+				"tagName":"Result",
+				"type":"String",
+				"valueSwitch":{
+					"cases":[
+						{
+							"tagValue":"Success"
+						},
+						{
+							"tagValue":"Fail"
+						}
+					]
+				}
+			}
+		]
+	},
+	"version":"2015-07-01"
+}

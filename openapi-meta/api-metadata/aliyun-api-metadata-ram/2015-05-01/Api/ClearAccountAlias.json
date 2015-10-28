@@ -1,0 +1,19 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTPS"
+	},
+	"name":"ClearAccountAlias",
+	"parameters":{
+		"parameters":[
+			
+		]
+	},
+	"product":"Ram",
+	"resultMapping":{
+		"members":[
+			
+		]
+	},
+	"version":"2015-05-01"
+}

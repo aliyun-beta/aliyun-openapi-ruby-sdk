@@ -1,0 +1,33 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTPS"
+	},
+	"name":"ListUserPolicies",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"true",
+				"tagName":"UserName",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Ram",
+	"resultMapping":{
+		"lists":[
+			{
+				"itemName":"Policy",
+				"tagName":"Policies"
+			}
+		],
+		"members":[
+			
+		]
+	},
+	"version":"2014-02-14"
+}

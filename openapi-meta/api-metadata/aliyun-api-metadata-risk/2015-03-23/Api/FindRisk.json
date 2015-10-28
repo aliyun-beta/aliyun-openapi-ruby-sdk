@@ -1,0 +1,125 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTP"
+	},
+	"name":"FindRisk",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"true",
+				"tagName":"MteeCode",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"true",
+				"tagName":"CodeType",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"true",
+				"tagName":"IdType",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"true",
+				"tagName":"UserId",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"Collina",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"UmidToken",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"Ip",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"Email",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"Phone",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Risk",
+	"resultMapping":{
+		"members":[
+			{
+				"tagName":"Code",
+				"type":"String"
+			}
+		],
+		"structs":[
+			{
+				"members":[
+					{
+						"tagName":"NoRisk",
+						"type":"Boolean"
+					},
+					{
+						"tagName":"Action",
+						"type":"String"
+					},
+					{
+						"tagName":"Tag",
+						"type":"String"
+					},
+					{
+						"tagName":"Message",
+						"type":"String"
+					}
+				],
+				"tagName":"Data"
+			}
+		]
+	},
+	"version":"2015-03-23"
+}

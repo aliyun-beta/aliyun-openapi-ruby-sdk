@@ -1,0 +1,39 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"TodayqpsByRegion",
+	"parameters":{
+		"parameters":[
+			
+		]
+	},
+	"product":"Yundun",
+	"resultMapping":{
+		"arrays":[
+			{
+				"itemName":"Region",
+				"members":[
+					{
+						"tagName":"RegionId",
+						"type":"String"
+					},
+					{
+						"tagName":"RegionNumber",
+						"type":"Long"
+					},
+					{
+						"tagName":"RegionFlow",
+						"type":"Long"
+					}
+				],
+				"tagName":"Data"
+			}
+		],
+		"members":[
+			
+		]
+	},
+	"version":"2015-02-27"
+}

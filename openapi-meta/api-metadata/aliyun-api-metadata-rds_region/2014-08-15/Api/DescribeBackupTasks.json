@@ -1,0 +1,146 @@
+{
+	"isvProtocol":{
+		"method":"POST|GET",
+		"protocol":"HTTP|HTTPS"
+	},
+	"name":"DescribeBackupTasks",
+	"parameters":{
+		"parameters":[
+			{
+				"required":"false",
+				"tagName":"OwnerId",
+				"tagPosition":"Query",
+				"type":"Long",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"ResourceOwnerAccount",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"ResourceOwnerId",
+				"tagPosition":"Query",
+				"type":"Long",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"ClientToken",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"Flag",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"OwnerAccount",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"true",
+				"tagName":"DBInstanceId",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"BackupJobId",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"BackupMode",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			},
+			{
+				"required":"false",
+				"tagName":"BackupJobStatus",
+				"tagPosition":"Query",
+				"type":"String",
+				"valueSwitch":{
+					
+				}
+			}
+		]
+	},
+	"product":"Rds_Region",
+	"resultMapping":{
+		"arrays":[
+			{
+				"itemName":"BackupJob",
+				"members":[
+					{
+						"tagName":"BackupProgressStatus",
+						"type":"String"
+					},
+					{
+						"tagName":"JobMode",
+						"type":"String",
+						"valueSwitch":{
+							"cases":[
+								{
+									"tagValue":"Automated"
+								},
+								{
+									"tagValue":"Manual"
+								}
+							]
+						}
+					},
+					{
+						"tagName":"Process",
+						"type":"String"
+					},
+					{
+						"tagName":"TaskAction",
+						"type":"String"
+					},
+					{
+						"tagName":"BackupjobId",
+						"type":"String"
+					}
+				],
+				"tagName":"Items"
+			}
+		],
+		"members":[
+			
+		]
+	},
+	"version":"2014-08-15"
+}
