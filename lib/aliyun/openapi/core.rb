@@ -1,6 +1,7 @@
 %w[
   version
   configuration
+  api_dsl
 ].each { |name| require "aliyun/openapi/core/#{name}" }
 
 module Aliyun
