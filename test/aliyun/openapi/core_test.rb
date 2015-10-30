@@ -1,5 +1,6 @@
-require 'test_helper'
-module Openapi
+require File.expand_path('../../../test_helper', __FILE__)
+
+module Aliyun::Openapi
   class CoreTest < Minitest::Test
 
     # Called before every test method runs. Can be used
