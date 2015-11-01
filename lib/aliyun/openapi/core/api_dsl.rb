@@ -32,6 +32,10 @@ module Aliyun
             @root ||= ApiDSL.new(name)
           end
 
+          def defined?
+            !@root.nil?
+          end
+
           def client
             c = @root.dup
             c.read_only = true
@@ -53,9 +57,11 @@ module Aliyun
         def method_missing(symbol, *args)
           # p symbol
           node = @children[symbol]
-          node.read_only = @read_only if node.respond_to? :read_only=
+          if node.respond_to? :read_only=
+            node.read_only = @read_only
+          end
           unless node
-            raise RuntimeError,'Not defined' if @read_only
+            raise RuntimeError, 'Not defined' if @read_only
             node = ApiDSL.new(symbol, self)
             @children[symbol] = node
           end
@@ -97,17 +103,42 @@ module Aliyun
         end
 
         def param(name, type, options= {})
-          @params[name] = type
+          @params[name] = {type: type, options: options}
         end
 
         def exec_call(params={})
           # validate params
+          validate_params(params)
 
           return Result.new(params)
         end
 
         def to_s(opts={})
           "#{@name} => [%s]" % @params.map { |k, v| "#{k} -> #{v}" }.join(';')
+        end
+
+        private
+        def validate_params(params)
+          required = required_params.keys - params.keys
+          unless required.empty?
+            # raise RuntimeError
+            raise InvalidParamsError, "Following Params Required : [#{required.map(&:to_s).join(',')}]"
+          end
+          type_errors = []
+          params.each do |k,v|
+            unless valid_type?(v, @params[k][:type])
+              type_errors << " #{key} : #{value} is not type of #{@params[k][:type]}"
+            end
+          end
+          raise InvalidParamsError, "Invalid Value of Params: #{type_errors.join(' | ')}" unless type_errors.empty?
+        end
+
+        def required_params
+          @required_params ||= @params.select{|k,v| v[:options][:required]}
+        end
+
+        def valid_type?(type, value)
+          true
         end
       end
 

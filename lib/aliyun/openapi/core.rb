@@ -2,6 +2,7 @@
   version
   configuration
   api_dsl
+  exception
 ].each { |name| require "aliyun/openapi/core/#{name}" }
 
 module Aliyun
