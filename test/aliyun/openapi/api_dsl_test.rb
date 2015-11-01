@@ -20,22 +20,22 @@ module Aliyun::Openapi
     def test_define_client_by_dsl
 
       assert_raises(RuntimeError) do
-        Core::ApiDSL.client.xxx.v20140526.instances.create_instance(param1: 1, param2: 'abc') do |response|
+        Core::ApiDSL.client.xxx(version:'2014-05-26').instances.create_instance(param1: 1, param2: 'abc') do |response|
         end
       end
 
       assert_raises(RuntimeError) do
-        Core::ApiDSL.client.ecs.v20140527.instances.create_instance(param1: 1, param2: 'abc') do |response|
+        Core::ApiDSL.client.ecs(version:'2014-05-27').instances.create_instance(param1: 1, param2: 'abc') do |response|
         end
       end
 
 
-      Core::ApiDSL.client.ecs.v20140526.instances.create_instance(param1: 1, param2: 'abc') do |response|
+      Core::ApiDSL.client.ecs(version:'2014-05-26').instances.create_instance(param1: 1, param2: 'abc') do |response|
         assert response.respond_to?(:body)
         assert response.respond_to?(:parsed_result)
       end
 
-      Core::ApiDSL.client.ecs.v20140526.instances.create_instance(param1: 1, param2: 'abc') do |response|
+      Core::ApiDSL.client.ecs(version:'2014-05-26').instances.create_instance(param1: 1, param2: 'abc') do |response|
 
       end
 
@@ -44,7 +44,7 @@ module Aliyun::Openapi
 
     def test_invalid_params
       assert_raises(InvalidParamsError) do
-        Core::ApiDSL.client.ecs.v20140526.instances.create_instance(param1: 1) do |response|
+        Core::ApiDSL.client.ecs(version:'2014-05-26').instances.create_instance(param1: 1) do |response|
           assert response.respond_to?(:body)
           assert response.respond_to?(:parsed_result)
         end

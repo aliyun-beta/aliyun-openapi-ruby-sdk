@@ -5,7 +5,7 @@ require 'minitest/autorun'
 
 
 
-Aliyun::Openapi::Core::ApiDSL.define('openapi').ecs.v20140526 do |api|
+Aliyun::Openapi::Core::ApiDSL.define('openapi').ecs(version:'2014-05-26') do |api|
   api.instances do |collection|
     collection.create_instance.end_point do |end_point|
       end_point.param :param1, :int

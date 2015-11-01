@@ -65,6 +65,12 @@ module Aliyun
             node = ApiDSL.new(symbol, self)
             @children[symbol] = node
           end
+          hash = args
+          #version check
+
+          if !hash.empty?  && hash[0][:version]
+            node = node.send(hash[0][:version].to_sym)
+          end
 
           if block_given?
             if (node.is_a? EndPoint)
@@ -72,7 +78,6 @@ module Aliyun
             else
               yield node
             end
-
           else
             node
           end
