@@ -23,12 +23,27 @@ module Aliyun::Openapi
             end_point.param :param1, :int
             end_point.param :param2, :string
           end
-          collection.start_instance.end_point do
-          end
+          # collection.start_instance.end_point do
+          # end
+        end
+      end
+      assert_raises(RuntimeError) do
+        Core::ApiDSL.client.xxx.v20140526.instances.create_instance(param1: 1, param2: 'abc') do |response|
         end
       end
 
-      puts Core::ApiDSL.root.to_s
+      assert_raises(RuntimeError) do
+        Core::ApiDSL.client.ecs.v20140527.instances.create_instance(param1: 1, param2: 'abc') do |response|
+        end
+      end
+
+
+      Core::ApiDSL.client.ecs.v20140526.instances.create_instance(param1: 1, param2: 'abc') do |response|
+        assert response.respond_to?(:body)
+        assert response.respond_to?(:parsed_result)
+      end
+
+      puts Core::ApiDSL.root.to_s(level: 0)
     end
   end
 end

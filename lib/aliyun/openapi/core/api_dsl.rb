@@ -22,13 +22,7 @@ module Aliyun
       #
       class ApiDSL
 
-        attr_reader :name, :children
 
-        def initialize(name, parent = nil)
-          @parent = parent
-          @name = name
-          @children = {}
-        end
 
         class << self
 
@@ -37,27 +31,59 @@ module Aliyun
           def define(name)
             @root ||= ApiDSL.new(name)
           end
+
+          def client
+            c = @root.dup
+            c.read_only = true
+            c
+          end
+        end
+
+        attr_reader :name, :children
+
+        attr_accessor :read_only
+
+        def initialize(name, parent = nil)
+          @parent = parent
+          @name = name
+          @children = {}
+          @read_only = false
         end
 
         def method_missing(symbol, *args)
-          p symbol
-          node = ApiDSL.new(symbol, self)
-          @children[symbol] = node
+          # p symbol
+          node = @children[symbol]
+          node.read_only = @read_only if node.respond_to? :read_only=
+          unless node
+            raise RuntimeError,'Not defined' if @read_only
+            node = ApiDSL.new(symbol, self)
+            @children[symbol] = node
+          end
+
           if block_given?
-            yield node
+            if (node.is_a? EndPoint)
+              yield node.exec_call(*args)
+            else
+              yield node
+            end
+
           else
             node
           end
         end
 
-        def to_s
-          "{ #{@children.map { |k, v| "#{k} : #{v}" if v }.join(',')}}"
+        def to_s(opts = {})
+          space = "_" * opts[:level] if opts[:level]
+          spece = "\n#{space}"
+          "#{space}{ #{@children.map { |k, v| "#{k} : #{v.to_s(level: opts[:level] ? opts[:level] + 1: nil)}" if v }.join(',')}}"
         end
 
         def end_point(&block)
           ep = EndPoint.new(@name, @parent)
           yield ep
+          # puts @parent.to_s
           @parent.children[name] = ep
+          # puts @parent.to_s
         end
       end
 
@@ -74,8 +100,22 @@ module Aliyun
           @params[name] = type
         end
 
-        def to_s
-          "#{@name} => [%s]" % @params.map{|k,v| "#{k} -> #{v}"}.join(';')
+        def exec_call(params={})
+          # validate params
+
+          return Result.new(params)
+        end
+
+        def to_s(opts={})
+          "#{@name} => [%s]" % @params.map { |k, v| "#{k} -> #{v}" }.join(';')
+        end
+      end
+
+      class Result
+        attr_reader :body, :parsed_result
+
+        def initialize(opts={})
+          # exec api call
         end
       end
     end
