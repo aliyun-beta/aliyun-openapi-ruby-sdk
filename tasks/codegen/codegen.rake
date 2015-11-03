@@ -27,13 +27,16 @@ namespace :codegen do
         api_names["apis"]["apis"].each do |name_h|
           # next unless name_h["name"] == 'CreateInstance'
           api_detail = JSON.parse(File.read("openapi-meta/api-metadata/#{product}/#{version}/Api/#{name_h["name"]}.json")) rescue break
-          version_in_rb = "v#{version.delete('-')}"
+          version_in_rb = "#{version.delete('-')}"
           api_name_in_rb = underscore(name_h["name"])
-          @version = version_in_rb
+          @version = version
           @api_name = api_name_in_rb
-          @product = product.gsub(/aliyun-api-metadata-/, '')
+          @api_name_camel_case = name_h["name"]
+          @product = product.gsub(/aliyun-api-metadata-/, '').gsub('-','_')
+          @name_space = api_names["product"]
           @api_params = api_detail["parameters"]["parameters"]
-          template('templates/api_define.rb', "generated/aliyun/openapi/#{api_names["product"].downcase}/#{version_in_rb}/#{api_name_in_rb}.rb")
+          template('templates/api_define.rb', "generated/lib/aliyun/openapi/#{@product}/#{@version}/#{api_name_in_rb}.rb")
+          template('templates/api_test.rb', "generated/test/aliyun/openapi/#{@product}/#{@version}/#{api_name_in_rb}_test.rb")
         end
       end
     end
