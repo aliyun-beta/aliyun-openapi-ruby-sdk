@@ -1,9 +1,20 @@
+if ENV["COVERAGE"]
+  require 'simplecov'
+  SimpleCov.start  do
+    add_group "Core", ["core", "openapi.rb"]
+    add_group "Generated", "/generated/lib"
+    add_filter "test/"
+  end
+  # puts "required simplecov"
+end
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 require 'aliyun/openapi'
 require 'pry'
 require 'minitest/autorun'
 require 'rainbow'
 require "mocha/mini_test"
+
+
 
 $LOAD_PATH.unshift File.expand_path('../../generated/lib', __FILE__)
 #
