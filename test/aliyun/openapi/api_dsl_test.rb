@@ -39,7 +39,7 @@ module Aliyun::Openapi
 
       end
 
-      puts Core::ApiDSL.root.to_s(level: 0)
+      # puts Core::ApiDSL.root.to_s(level: 0)
     end
 
     def test_invalid_params

@@ -2,8 +2,13 @@ $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 require 'aliyun/openapi'
 require 'pry'
 require 'minitest/autorun'
+require 'rainbow'
+require 'find'
+$LOAD_PATH.unshift File.expand_path('../../generated/lib', __FILE__)
 
-
+Dir[File.expand_path('../../generated/lib/aliyun/openapi/*.rb', __FILE__)].each do |path|
+  require path.gsub(/^.*generated\/lib\/(.*)\.rb/, '\1')
+end
 
 Aliyun::Openapi::Core::ApiDSL.define('openapi').ecs(version:'2014-05-26') do |api|
   api.instances do |collection|

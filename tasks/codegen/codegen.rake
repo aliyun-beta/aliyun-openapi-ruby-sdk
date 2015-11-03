@@ -20,6 +20,7 @@ namespace :codegen do
   task :generate_code do
     products = `ls openapi-meta/api-metadata`.split("\n")
     products.each do |product|
+      files = []
       # next unless product == 'aliyun-api-metadata-ecs'
       versions = `ls openapi-meta/api-metadata/#{product}`.split("\n")
       versions.each do |version|
@@ -37,7 +38,10 @@ namespace :codegen do
           @api_params = api_detail["parameters"]["parameters"]
           template('templates/api_define.rb', "generated/lib/aliyun/openapi/#{@product}/#{@version}/#{api_name_in_rb}.rb")
           template('templates/api_test.rb', "generated/test/aliyun/openapi/#{@product}/#{@version}/#{api_name_in_rb}_test.rb")
+          files << "aliyun/openapi/#{@product}/#{@version}/#{api_name_in_rb}"
         end
+        @files = files
+        template('templates/api_product.rb', "generated/lib/aliyun/openapi/#{@product}.rb")
       end
     end
 
