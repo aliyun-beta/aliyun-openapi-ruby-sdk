@@ -4,7 +4,7 @@ require File.expand_path('../../../../../../../test/test_helper', __FILE__)
   <%required_params << param if  param['required'] %>
 <% end %>
 module Aliyun::Openapi
-  class <%= @product.capitalize %>Test < Minitest::Test
+  class <%= @product.capitalize %>Test < ApiTest
     def test_<%=@api_name%>_<%= @version.delete('-')%>
       Core::ApiDSL.client.<%= @product %>(version: '<%= @version %>').<%= @api_name %>() do |response|
       end
