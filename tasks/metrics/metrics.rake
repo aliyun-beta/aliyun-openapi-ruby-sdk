@@ -13,7 +13,7 @@ namespace :metrics do
     puts "#{Rainbow('Test  Code').yellow} :  #{file} Files, #{blank} blank lines, #{comment} comment lines, #{test_code} actual lines"
     percentage = test_code.to_i * 1.0 / (sys_code.to_i + test_code.to_i)
     color = percentage > 0.3 ? :green : :red
-    puts "#{Rainbow("Test Code Percentage : #{percentage * 100} %").send(color)}"
+    puts "#{Rainbow("Test Code Percentage : #{(percentage * 100).round(2)} %").send(color)}"
   end
 
 end
