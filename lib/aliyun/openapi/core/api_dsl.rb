@@ -139,7 +139,7 @@ module Aliyun
         end
 
         def required_params
-          @required_params ||= @params.select{|k,v| v[:options][:required]}
+          @required_params ||= @params.select{|k,v| v[:required]}
         end
 
         def valid_type?(type, value)
