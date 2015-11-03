@@ -107,8 +107,8 @@ module Aliyun
           @params = {}
         end
 
-        def param(name, type, options= {})
-          @params[name] = {type: type, options: options}
+        def param(name, type, required, options= {})
+          @params[name] = {type: type, required: required, options: options}
         end
 
         def exec_call(params={})
@@ -139,7 +139,7 @@ module Aliyun
         end
 
         def required_params
-          @required_params ||= @params.select{|k,v| v[:options][:required]}
+          @required_params ||= @params.select{|k,v| v[:required]}
         end
 
         def valid_type?(type, value)
