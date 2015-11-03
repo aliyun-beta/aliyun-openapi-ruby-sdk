@@ -2,7 +2,7 @@ require 'rainbow'
 require 'yaml'
 
 namespace :metrics do
-  desc "validate meta"
+  desc "cloc to check test code percentage"
   task :cloc do
     # Rake::Task['codegen:generate_code'].invoke
     code =`bin/cloc --csv lib generated/lib | tail -1`
