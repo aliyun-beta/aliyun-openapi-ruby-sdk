@@ -13,7 +13,8 @@ require 'pry'
 require 'minitest/autorun'
 require 'rainbow'
 require "mocha/mini_test"
-
+require 'webmock/minitest'
+require 'timecop'
 
 
 $LOAD_PATH.unshift File.expand_path('../../generated/lib', __FILE__)

@@ -3,6 +3,7 @@
   configuration
   api_dsl
   exception
+  client
 ].each { |name| require "aliyun/openapi/core/#{name}" }
 
 module Aliyun

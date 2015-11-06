@@ -21,7 +21,8 @@ module Aliyun::Openapi
       Aliyun::Openapi.configure do |config|
         config.server_address = 'ecs.aliyuncs.com'
         config.ssl_required =  true
-        config.token = 'AXDS'
+        config.access_key_id = '1'
+        config.access_key_secret = '2'
       end
       assert !Aliyun::Openapi.config.end_points.nil?
 
@@ -34,7 +35,8 @@ module Aliyun::Openapi
 
       assert_equal 'ecs.aliyuncs.com', Aliyun::Openapi.config.server_address
       assert Aliyun::Openapi.config.ssl_required
-      assert_equal 'AXDS', Aliyun::Openapi.config.token
+      assert_equal '1', Aliyun::Openapi.config.access_key_id
+      assert_equal '2', Aliyun::Openapi.config.access_key_secret
     end
   end
 end
