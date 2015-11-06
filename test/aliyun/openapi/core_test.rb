@@ -23,6 +23,14 @@ module Aliyun::Openapi
         config.ssl_required =  true
         config.token = 'AXDS'
       end
+      assert !Aliyun::Openapi.config.end_points.nil?
+
+      #test necessary types
+      Aliyun::Openapi.config.end_points.each do |k,v|
+        assert_kind_of Array, v[:region_ids]
+        assert !v[:region_ids].empty?
+        assert_kind_of Hash, v[:products]
+      end
 
       assert_equal 'ecs.aliyuncs.com', Aliyun::Openapi.config.server_address
       assert Aliyun::Openapi.config.ssl_required

@@ -1,6 +1,9 @@
 require 'find'
 require 'json'
 require 'rainbow'
+require 'yaml'
+require 'rexml/document'
+require 'active_support/core_ext/hash'
 
 namespace :codegen do
   desc "build index of api product"
@@ -74,6 +77,21 @@ namespace :codegen do
     index
   end
 
+
+  desc "generate endpoint from xml"
+  task :endpoint do
+    target = {}
+    doc = {}
+    File.open( 'openapi-meta/endpoints.xml' ) { |xf| doc = Hash.from_xml( xf ) }
+    doc['Endpoints']['Endpoint'].each do |ep|
+      target[ep['name'].to_sym] = {
+          region_ids: [ep['RegionIds']['RegionId']].flatten,
+          products: ep['Products']['Product'].map{|prod| [prod['ProductName'].downcase.to_sym, prod['DomainName']]}.to_h
+      }
+    end
+    File.open( 'lib/aliyun/openapi/endpoints.yml', 'w' ) { |f| f.write( target.to_yaml ) }
+  end
+
 # Gets an ERB template at the relative source, executes it and makes a copy
 # at the relative destination.
 #
@@ -98,7 +116,6 @@ namespace :codegen do
     FileUtils.mkdir_p(File.dirname(destination))
     File.open(destination, "wb") { |f| f.write content }
   end
-
 
   def underscore(camel_cased_word)
     return camel_cased_word unless camel_cased_word =~ /[A-Z-]|::/
