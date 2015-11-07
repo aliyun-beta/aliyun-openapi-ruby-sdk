@@ -19,7 +19,10 @@ module Aliyun::Openapi
       SecureRandom.stubs(:hex).returns('NwDAxvLU6tFE0DVb')
       Timecop.freeze(Time.iso8601('2012-12-26T10:33:56Z')) do
         c = Core::Client.connection(:end_point => 'http://ecs.aliyuncs.com/?Format=XML&AccessKeyId=testid&Action=DescribeRegions&RegionId=region1&SignatureNonce=NwDAxvLU6tFE0DVb&Version=2014-05-26')
-        p c.get('')
+        # require 'pry'; binding.pry
+        response = c.get # Signature = MLyYy%2F7pMOXJKOuSC8M5hZ%2FWsZs%3D
+        query = ::Faraday::Utils.parse_query(response.env.url.query)
+        assert_equal(CGI.unescape('MLyYy%2F7pMOXJKOuSC8M5hZ%2FWsZs%3D'), query['Signature'])
       end
     end
   end
