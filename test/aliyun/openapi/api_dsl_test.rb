@@ -50,5 +50,10 @@ module Aliyun::Openapi
         end
       end
     end
+
+    def test_invalid_params
+      assert_equal :ecs, Core::ApiDSL.client.ecs(version:'2014-05-26').create_mock_instance.product
+      assert_equal :ecs, Core::ApiDSL.client.ecs(version:'2014-05-26').product
+    end
   end
 end

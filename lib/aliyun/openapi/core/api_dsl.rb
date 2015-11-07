@@ -104,6 +104,10 @@ module Aliyun
           @parent.children[name] = ep
           # puts @parent.to_s
         end
+
+        def product
+          @type == :product ? @name : @parent.product
+        end
       end
 
 
@@ -122,6 +126,8 @@ module Aliyun
         def exec_call(params={})
           # validate params
           validate_params(params)
+
+          # Client.build(self)
           return Result.new(params)
         end
 
@@ -129,7 +135,13 @@ module Aliyun
           "#{@name} => [%s]" % @params.map { |k, v| "#{k} -> #{v}" }.join(';')
         end
 
+        def product
+          @parent.product
+        end
+
         private
+
+
         def validate_params(params)
           required = required_params.keys - params.keys
           unless required.empty?

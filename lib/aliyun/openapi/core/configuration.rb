@@ -16,7 +16,7 @@ module Aliyun
 
       def look_up_server(product, region = 'cn-hangzhou')
         setting = @end_points.select {|k,v| v[:region_ids].include?(region)}
-        setting.values[0][:products][product.gsub(/_/, '-').to_sym] unless setting.empty?
+        setting.values[0][:products][product.to_s.gsub(/_/, '-').to_sym] unless setting.empty?
       end
     end
   end

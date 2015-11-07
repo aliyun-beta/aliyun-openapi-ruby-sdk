@@ -10,6 +10,11 @@ module Aliyun
 
           end
 
+
+          def build(end_point)
+
+          end
+
           # private
           def connection(opts = {})
             options = {
