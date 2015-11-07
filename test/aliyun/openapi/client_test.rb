@@ -15,7 +15,7 @@ module Aliyun::Openapi
       stub_request(:any, /.*\.aliyuncs\.com/)
     end
 
-    def no_test_mock
+    def test_mock
       SecureRandom.stubs(:hex).returns('NwDAxvLU6tFE0DVb')
       Timecop.freeze(Time.iso8601('2012-12-26T10:33:56Z')) do
         c = Core::Client.connection(:end_point => 'http://ecs.aliyuncs.com/?Format=XML&AccessKeyId=testid&Action=DescribeRegions&RegionId=region1&SignatureNonce=NwDAxvLU6tFE0DVb&Version=2014-05-26')
