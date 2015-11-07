@@ -15,7 +15,6 @@ module Aliyun::Openapi::Faraday
     def call(env)
       query = Faraday::Utils.parse_query(env[:url].query) unless env[:url].query.nil?
       query ||= {}
-      p Time.now.utc.iso8601
       query.merge!({'AccessKeyId' => @access_key_id,
                     'SignatureMethod' => 'HMAC-SHA1',
                     'Timestamp' => Time.now.utc.iso8601,
