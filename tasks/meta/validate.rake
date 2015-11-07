@@ -27,4 +27,9 @@ namespace :meta do
 
   end
 
+  desc "list all methods"
+  task :methods do 
+    puts `grep -R method openapi-meta | sed "s/.*://g" | sort | uniq`
+  end
+
 end
