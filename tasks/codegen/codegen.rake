@@ -27,22 +27,26 @@ namespace :codegen do
     # next unless product == 'aliyun-api-metadata-ecs'
      # = version_files #`ls openapi-meta/api-metadata/#{product}`.split("\n")
     version_files.each do |version_file|
+      next if version_file != 'openapi-meta/api-metadata/aliyun-api-metadata-ecs/2014-05-26/Version-Info.json'
       api_names = JSON.parse(File.read(version_file))
       api_names["apis"]["apis"].each do |name_h|
-        # next unless name_h["name"] == 'CreateInstance'
-        api_detail = JSON.parse(File.read(File.expand_path("./Api/#{name_h["name"]}.json", File.dirname(version_file)))) rescue break
-        # version_in_rb = "#{api_detail['version'].delete('-')}"
-        api_name_in_rb = underscore(name_h["name"])
-        # @product = api_detail['product']
-        @version = api_detail['version']
-        @api_name = api_name_in_rb
-        @api_name_camel_case = name_h["name"]
-        @product = api_detail['product'].gsub('-','_').downcase
-        @name_space = api_names["product"]
-        @api_params = api_detail["parameters"]["parameters"]
-        template('templates/api_define.rb', "generated/lib/aliyun/openapi/#{@product}/#{@version}/#{api_name_in_rb}.rb")
-        template('templates/api_test.rb', "generated/test/aliyun/openapi/#{@product}/#{@version}/#{api_name_in_rb}_test.rb")
-        files << "aliyun/openapi/#{@product}/#{@version}/#{api_name_in_rb}"
+        begin
+          api_detail = JSON.parse(File.read(File.expand_path("./Api/#{name_h["name"]}.json", File.dirname(version_file))))
+          # version_in_rb = "#{api_detail['version'].delete('-')}"
+          api_name_in_rb = underscore(name_h["name"])
+          # @product = api_detail['product']
+          @version = api_detail['version']
+          @api_name = api_name_in_rb
+          @api_name_camel_case = name_h["name"]
+          @product = api_detail['product'].gsub('-','_').downcase
+          @name_space = api_names["product"]
+          @api_params = api_detail["parameters"]["parameters"]
+          template('templates/api_define.rb', "generated/lib/aliyun/openapi/#{@product}/#{@version}/#{api_name_in_rb}.rb")
+          template('templates/api_test.rb', "generated/test/aliyun/openapi/#{@product}/#{@version}/#{api_name_in_rb}_test.rb")
+          files << "aliyun/openapi/#{@product}/#{@version}/#{api_name_in_rb}"
+        rescue
+          puts "#{Rainbow('ERROR :').red} #{File.expand_path("./Api/#{name_h["name"]}.json", File.dirname(version_file))}"
+        end
       end
       @files = files
       template('templates/api_product.rb', "generated/lib/aliyun/openapi/#{@product}.rb")
