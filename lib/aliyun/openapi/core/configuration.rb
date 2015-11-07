@@ -10,7 +10,13 @@ module Aliyun
       attr_reader :end_points
       def initialize
         @end_points = YAML.parse( File.read(END_POINTS_FILE) ).transform
+
         @end_points.frozen? #make it read only
+      end
+
+      def look_up_server(product, region = 'cn-hangzhou')
+        setting = @end_points.select {|k,v| v[:region_ids].include?(region)}
+        setting.values[0][:products][product.gsub(/_/, '-').to_sym] unless setting.empty?
       end
     end
   end

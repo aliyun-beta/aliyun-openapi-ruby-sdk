@@ -38,5 +38,14 @@ module Aliyun::Openapi
       assert_equal '1', Aliyun::Openapi.config.access_key_id
       assert_equal '2', Aliyun::Openapi.config.access_key_secret
     end
+
+    def test_look_up_server
+      Aliyun::Openapi.configure do |config|
+        config.ssl_required =  true
+      end
+      # assert_equal 'r-kvstore-cn-hangzhou.aliyuncs.com', Aliyun::Openapi.config.look_up_server('r_kvstore')
+      assert_equal 'oss-admin.aliyuncs.com', Aliyun::Openapi.config.look_up_server('ossadmin')
+      assert_equal 'oss-admin.aliyuncs.com', Aliyun::Openapi.config.look_up_server('ossadmin', 'cn-hangzhou')
+    end
   end
 end
