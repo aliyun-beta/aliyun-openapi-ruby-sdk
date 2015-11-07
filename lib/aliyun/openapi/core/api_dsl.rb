@@ -36,14 +36,15 @@ module Aliyun
             !@root.nil?
           end
 
-          def client
+          def client(opts={})
+            #region
             c = @root.dup
             c.read_only = true
             c
           end
         end
 
-        attr_reader :name, :children
+        attr_reader :name, :children, :type
 
         attr_accessor :read_only
 
@@ -52,6 +53,13 @@ module Aliyun
           @name = name
           @children = {}
           @read_only = false
+          if parent
+            if parent.type == :root
+              @type = :product
+            end
+          else
+            @type = :root
+          end
         end
 
         def method_missing(symbol, *args)
@@ -114,7 +122,6 @@ module Aliyun
         def exec_call(params={})
           # validate params
           validate_params(params)
-
           return Result.new(params)
         end
 
