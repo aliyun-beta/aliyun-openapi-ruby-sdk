@@ -54,8 +54,11 @@ module Aliyun
           @children = {}
           @read_only = false
           if parent
-            if parent.type == :root
-              @type = :product
+            case parent.type
+              when :root
+                @type = :product
+              when :product
+                @type = :version
             end
           else
             @type = :root
@@ -106,7 +109,11 @@ module Aliyun
         end
 
         def product
-          @type == :product ? @name : @parent.product
+          @type == :product ? self : @parent.product
+        end
+
+        def version
+          @type == :version ? self : @parent.version
         end
       end
 
@@ -156,8 +163,12 @@ module Aliyun
           "#{@name} => [%s]" % @params.map { |k, v| "#{k} -> #{v}" }.join(';')
         end
 
+        def version
+          @version ||= @parent.version.name
+        end
+
         def product
-          @parent.product
+          @product ||= @parent.product.name
         end
 
         def build_url(params = {})
@@ -168,7 +179,8 @@ module Aliyun
         private
 
         def action_query
-          {'Action': @name.to_s.split('_').collect(&:capitalize).join}
+          {'Action': @name.to_s.split('_').collect(&:capitalize).join,
+          'Version': version.to_s}
         end
 
         def filter_params(params, filter)

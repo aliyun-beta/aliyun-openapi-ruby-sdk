@@ -40,7 +40,7 @@ end
 
 class ApiTest < Minitest::Test
   def setup
-    Aliyun::Openapi::Core::EndPoint.any_instance.stubs(:exec_call).returns(Aliyun::Openapi::Core::Result.new)
+    Aliyun::Openapi::Core::EndPoint.any_instance.stubs(:exec_call).returns(Faraday::Response.new)
   end
 
   def teardown
