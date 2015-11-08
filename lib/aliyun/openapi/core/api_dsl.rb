@@ -126,7 +126,7 @@ module Aliyun
         end
 
         def methods=(methods)
-          @methods = methods.sort # GET over POST
+          @methods = methods.sort.map{|v| v.downcase.to_sym } # GET over POST
         end
 
         def pattern=(pattern)
@@ -136,9 +136,20 @@ module Aliyun
         def exec_call(params={})
           # validate params
           validate_params(params)
-          # conn = Client.build_connection(self, params)
+          conn = Client.build(self, build_url(params))
+          # if [:delete, :get].include? @methods.first
+          method = @methods.first || :get
+          response = conn.send(method) do |request|
+            # request.path =
+            request.body = filter_params(params, body_prams) if ! body_prams.nil? && ! body_prams.empty?
+            # require 'pry'; binding.pry
+          end
+          # else
+          #   conn.send(@methods.first, filter_params(params, body_prams))
+          # end
           # Client.build(self)
-          return Result.new(params)
+          # return Result.new(params)
+          return response
         end
 
         def to_s(opts={})
@@ -206,13 +217,13 @@ module Aliyun
         end
       end
 
-      class Result
-        attr_reader :body, :parsed_result
-
-        def initialize(opts={})
-          # exec api call
-        end
-      end
+      # class Result
+      #   attr_reader :body, :parsed_result
+      #
+      #   def initialize(opts={})
+      #     # exec api call
+      #   end
+      # end
     end
   end
 end
