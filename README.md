@@ -8,6 +8,8 @@ Essentially ```aliyun-openapi``` is DSL definition + code generator. It generate
 
 # How to use this code?
 
+Before everything, make sure you run ```rake codegen:generate_code``` to build generated code and test!
+
 ## Step 1 : Configuration
 
 You need to configure the openapi before using it.
