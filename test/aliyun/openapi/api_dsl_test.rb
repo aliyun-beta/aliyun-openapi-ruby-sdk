@@ -55,5 +55,10 @@ module Aliyun::Openapi
       assert_equal :ecs, Core::ApiDSL.client.ecs(version:'2014-05-26').create_mock_instance.product
       assert_equal :ecs, Core::ApiDSL.client.ecs(version:'2014-05-26').product
     end
+
+    def test_build_url
+      assert_kind_of Core::EndPoint, Core::ApiDSL.client.ecs(version:'2014-05-26').create_mock_project
+      assert_equal '/projects/1/alerts?Action=CreateMockProject&Type=Integer', Core::ApiDSL.client.ecs(version:'2014-05-26').create_mock_project.build_url('ProjectName': 1, 'Alert': 'abcdefg', 'Type': 'Integer')
+    end
   end
 end

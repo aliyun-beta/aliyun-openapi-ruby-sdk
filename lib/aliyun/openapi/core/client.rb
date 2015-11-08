@@ -11,9 +11,10 @@ module Aliyun
           end
 
 
-          def build(end_point)
-
-          end
+          # def build(end_point, params)
+          #   # url = (Openapi.config.ssl_required ? 'https' : 'http') + '://' + Openapi.config.look_up_server(end_point.product) + '?' +::Faraday::Util.build_query(end_point.action_query.merge(params))
+          #   # connection end_point: url
+          # end
 
           # private
           def connection(opts = {})

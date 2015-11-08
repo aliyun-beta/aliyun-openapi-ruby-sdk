@@ -28,6 +28,14 @@ Aliyun::Openapi::Core::ApiDSL.define('openapi').ecs(version:'2014-05-26').create
   end_point.param :param2, :string, true
 end
 
+Aliyun::Openapi::Core::ApiDSL.define('openapi').ecs(version:'2014-05-26').create_mock_project.end_point do |end_point|
+  end_point.param :'ProjectName', :Integer, false, 'tagPosition' => 'Path'
+  end_point.param :'Alert', :String, true, 'tagPosition' => 'Body'
+  end_point.param :'Type', :String, true, 'tagPosition' => 'Query'
+  end_point.pattern =  "/projects/[ProjectName]/alerts"
+  end_point.methods = ['POST']
+end
+
 # puts Aliyun::Openapi::Core::ApiDSL.root.to_s(level: 0)
 
 class ApiTest < Minitest::Test

@@ -117,16 +117,26 @@ module Aliyun
           @parent = parent
           @name = name
           @params = {}
+          @methods = []
+          @pattern = nil
         end
 
         def param(name, type, required, options= {})
           @params[name] = {type: type, required: required, options: options}
         end
 
+        def methods=(methods)
+          @methods = methods.sort # GET over POST
+        end
+
+        def pattern=(pattern)
+          @pattern = pattern.gsub(/\[/, '%{').gsub(/\]/, '}')
+        end
+
         def exec_call(params={})
           # validate params
           validate_params(params)
-
+          # conn = Client.build_connection(self, params)
           # Client.build(self)
           return Result.new(params)
         end
@@ -139,8 +149,38 @@ module Aliyun
           @parent.product
         end
 
+        def build_url(params = {})
+          url = @pattern ? @pattern % filter_params(params, path_params) : ''
+          "#{url}?#{::Faraday::Utils.build_query(action_query.merge(filter_params(params, query_params)))}"
+        end
+
         private
 
+        def action_query
+          {'Action': @name.to_s.split('_').collect(&:capitalize).join}
+        end
+
+        def filter_params(params, filter)
+          params.select{|k,v| filter[k] }
+        end
+
+        def query_params
+          @query_params ||= @params.select do |k,v|
+            @params[k][:options]['tagPosition'] == 'Query'
+          end
+        end
+
+        def path_params
+          @path_params ||= @params.select do |k,v|
+            @params[k][:options]['tagPosition'] == 'Path'
+          end
+        end
+
+        def body_prams
+          @body_prams ||= @params.select do |k,v|
+            @params[k][:options]['tagPosition'] == 'Body'
+          end
+        end
 
         def validate_params(params)
           required = required_params.keys - params.keys
