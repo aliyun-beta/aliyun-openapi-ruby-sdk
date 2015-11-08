@@ -15,7 +15,7 @@ module Aliyun
         @end_points.frozen? #make it read only
       end
 
-      def look_up_server(product)
+      def look_up_server(product, region = nil)
         region = @region || 'cn-hangzhou'
         setting = @end_points.select {|k,v| v[:region_ids].include?(region)}
         setting.values[0][:products][product.to_s.gsub(/_/, '-').to_sym] unless setting.empty?
