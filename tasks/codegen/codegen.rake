@@ -23,11 +23,12 @@ namespace :codegen do
   task :generate_code do
     # products = `ls openapi-meta/api-metadata`.split("\n")
     # products.each do |product|
-    files = []
+
     # next unless product == 'aliyun-api-metadata-ecs'
      # = version_files #`ls openapi-meta/api-metadata/#{product}`.split("\n")
     version_files.each do |version_file|
       # next if version_file != 'openapi-meta/api-metadata/aliyun-api-metadata-ecs/2014-05-26/Version-Info.json'
+      files = []
       api_names = JSON.parse(File.read(version_file))
       api_names["apis"]["apis"].each do |name_h|
         begin
@@ -48,9 +49,9 @@ namespace :codegen do
         rescue
           puts "#{Rainbow('ERROR :').red} #{File.expand_path("./Api/#{name_h["name"]}.json", File.dirname(version_file))}"
         end
+        @files = files
+        template('templates/api_product.rb', "generated/lib/aliyun/openapi/#{@product}.rb")
       end
-      @files = files
-      template('templates/api_product.rb', "generated/lib/aliyun/openapi/#{@product}.rb")
     end
     # end
 
