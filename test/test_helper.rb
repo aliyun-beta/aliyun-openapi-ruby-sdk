@@ -18,21 +18,31 @@ require 'timecop'
 
 
 $LOAD_PATH.unshift File.expand_path('../../generated/lib', __FILE__)
+
+require 'aliyun/openapi/all'
 #
-Dir[File.expand_path('../../generated/lib/aliyun/openapi/*.rb', __FILE__)].each do |path|
-  require path.gsub(/^.*generated\/lib\/(.*)\.rb/, '\1')
-end
+# Dir[File.expand_path('../../generated/lib/aliyun/openapi/*.rb', __FILE__)].each do |path|
+#   require path.gsub(/^.*generated\/lib\/(.*)\.rb/, '\1')
+# end
 
 Aliyun::Openapi::Core::ApiDSL.define('openapi').ecs(version:'2014-05-26').create_mock_instance.end_point do |end_point|
   end_point.param :param1, :int, false
   end_point.param :param2, :string, true
 end
 
+Aliyun::Openapi::Core::ApiDSL.define('openapi').ecs(version:'2014-05-26').create_mock_project.end_point do |end_point|
+  end_point.param :'ProjectName', :Integer, false, 'tagPosition' => 'Path'
+  end_point.param :'Alert', :String, true, 'tagPosition' => 'Body'
+  end_point.param :'Type', :String, true, 'tagPosition' => 'Query'
+  end_point.pattern =  "/projects/[ProjectName]/alerts"
+  end_point.methods = ['POST']
+end
+
 # puts Aliyun::Openapi::Core::ApiDSL.root.to_s(level: 0)
 
 class ApiTest < Minitest::Test
   def setup
-    Aliyun::Openapi::Core::EndPoint.any_instance.stubs(:exec_call).returns(Aliyun::Openapi::Core::Result.new)
+    Aliyun::Openapi::Core::EndPoint.any_instance.stubs(:exec_call).returns(Faraday::Response.new)
   end
 
   def teardown

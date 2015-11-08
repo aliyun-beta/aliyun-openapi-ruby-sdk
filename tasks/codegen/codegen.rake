@@ -23,11 +23,13 @@ namespace :codegen do
   task :generate_code do
     # products = `ls openapi-meta/api-metadata`.split("\n")
     # products.each do |product|
-    files = []
+    products = []
+    products_files = {}
     # next unless product == 'aliyun-api-metadata-ecs'
      # = version_files #`ls openapi-meta/api-metadata/#{product}`.split("\n")
     version_files.each do |version_file|
-      next if version_file != 'openapi-meta/api-metadata/aliyun-api-metadata-ecs/2014-05-26/Version-Info.json'
+      # next if version_file != 'openapi-meta/api-metadata/aliyun-api-metadata-ecs/2014-05-26/Version-Info.json'
+      files = []
       api_names = JSON.parse(File.read(version_file))
       api_names["apis"]["apis"].each do |name_h|
         begin
@@ -41,16 +43,25 @@ namespace :codegen do
           @product = api_detail['product'].gsub('-','_').downcase
           @name_space = api_names["product"]
           @api_params = api_detail["parameters"]["parameters"]
+          @api_detail = api_detail
           template('templates/api_define.rb', "generated/lib/aliyun/openapi/#{@product}/#{@version}/#{api_name_in_rb}.rb")
           template('templates/api_test.rb', "generated/test/aliyun/openapi/#{@product}/#{@version}/#{api_name_in_rb}_test.rb")
           files << "aliyun/openapi/#{@product}/#{@version}/#{api_name_in_rb}"
         rescue
           puts "#{Rainbow('ERROR :').red} #{File.expand_path("./Api/#{name_h["name"]}.json", File.dirname(version_file))}"
         end
+        products_files[@product] ||= []
+        products_files[@product] += files
+        products << "aliyun/openapi/#{@product}"
       end
-      @files = files
-      template('templates/api_product.rb', "generated/lib/aliyun/openapi/#{@product}.rb")
+
     end
+    products_files.each do |product, files|
+      @files = files
+      template('templates/api_product.rb', "generated/lib/aliyun/openapi/#{product}.rb")
+    end
+    @products = products.uniq
+    template('templates/api_all.rb', "generated/lib/aliyun/openapi/all.rb")
     # end
 
     #

@@ -32,4 +32,14 @@ namespace :meta do
     puts `grep -R method openapi-meta | sed "s/.*://g" | sort | uniq`
   end
 
+
+  desc "list patterns"
+  task :pattern do
+    puts `grep -R pattern openapi-meta | sed "s/.*://g" | sort | uniq`
+  end
+
+  desc "list types"
+  task :types do
+    puts `grep -R type openapi-meta | sed "s/.*://g" | sort | uniq`
+  end
 end

@@ -54,8 +54,11 @@ module Aliyun
           @children = {}
           @read_only = false
           if parent
-            if parent.type == :root
-              @type = :product
+            case parent.type
+              when :root
+                @type = :product
+              when :product
+                @type = :version
             end
           else
             @type = :root
@@ -104,6 +107,14 @@ module Aliyun
           @parent.children[name] = ep
           # puts @parent.to_s
         end
+
+        def product
+          @type == :product ? self : @parent.product
+        end
+
+        def version
+          @type == :version ? self : @parent.version
+        end
       end
 
 
@@ -113,23 +124,87 @@ module Aliyun
           @parent = parent
           @name = name
           @params = {}
+          @methods = []
+          @pattern = nil
         end
 
         def param(name, type, required, options= {})
           @params[name] = {type: type, required: required, options: options}
         end
 
+        def methods=(methods)
+          @methods = methods.sort.map{|v| v.downcase.to_sym } # GET over POST
+        end
+
+        def pattern=(pattern)
+          @pattern = pattern.gsub(/\[/, '%{').gsub(/\]/, '}')
+        end
+
         def exec_call(params={})
           # validate params
           validate_params(params)
-          return Result.new(params)
+          conn = Client.build(self, build_url(params))
+          # if [:delete, :get].include? @methods.first
+          method = @methods.first || :get
+          response = conn.send(method) do |request|
+            # request.path =
+            request.body = filter_params(params, body_prams) if ! body_prams.nil? && ! body_prams.empty?
+            # require 'pry'; binding.pry
+          end
+          # else
+          #   conn.send(@methods.first, filter_params(params, body_prams))
+          # end
+          # Client.build(self)
+          # return Result.new(params)
+          return response
         end
 
         def to_s(opts={})
           "#{@name} => [%s]" % @params.map { |k, v| "#{k} -> #{v}" }.join(';')
         end
 
+        def version
+          @version ||= @parent.version.name
+        end
+
+        def product
+          @product ||= @parent.product.name
+        end
+
+        def build_url(params = {})
+          url = @pattern ? @pattern % filter_params(params, path_params) : ''
+          "#{url}?#{::Faraday::Utils.build_query(action_query.merge(filter_params(params, query_params)))}"
+        end
+
         private
+
+        def action_query
+          {'Action': @name.to_s.split('_').collect(&:capitalize).join,
+          'Version': version.to_s}
+        end
+
+        def filter_params(params, filter)
+          params.select{|k,v| filter[k] }
+        end
+
+        def query_params
+          @query_params ||= @params.select do |k,v|
+            @params[k][:options]['tagPosition'] == 'Query'
+          end
+        end
+
+        def path_params
+          @path_params ||= @params.select do |k,v|
+            @params[k][:options]['tagPosition'] == 'Path'
+          end
+        end
+
+        def body_prams
+          @body_prams ||= @params.select do |k,v|
+            @params[k][:options]['tagPosition'] == 'Body'
+          end
+        end
+
         def validate_params(params)
           required = required_params.keys - params.keys
           unless required.empty?
@@ -154,13 +229,13 @@ module Aliyun
         end
       end
 
-      class Result
-        attr_reader :body, :parsed_result
-
-        def initialize(opts={})
-          # exec api call
-        end
-      end
+      # class Result
+      #   attr_reader :body, :parsed_result
+      #
+      #   def initialize(opts={})
+      #     # exec api call
+      #   end
+      # end
     end
   end
 end
