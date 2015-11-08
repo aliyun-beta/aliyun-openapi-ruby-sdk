@@ -5,6 +5,4 @@ FileList['tasks/**/*.rake'].each do |file|
 	load file
 end
 
-
-
-task :default => :test
+task :default => 'test:all'
