@@ -20,10 +20,10 @@ module Aliyun
     # Users must invoke this if they want to have the configuration reset when
     # they use the runner multiple times within the same process. Users must deal
     # themselves with re-configuration of OpenAPI before run.
-    def self.reset
-      @world = nil
-      @configuration = nil
-    end
+    # def self.reset
+    #   @world = nil
+    #   @configuration = nil
+    # end
 
     # Yields the global configuration to a block.
     # @yield [Configuration] global configuration
@@ -41,10 +41,6 @@ module Aliyun
 
     def self.config
       @configuration
-    end
-
-    module Core
-
     end
   end
 end

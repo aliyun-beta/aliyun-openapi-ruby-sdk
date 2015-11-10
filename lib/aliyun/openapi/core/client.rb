@@ -6,10 +6,6 @@ module Aliyun
     module Core
       class Client
         class << self
-          def exec(end_point)
-
-          end
-
 
           def build(end_point, query)
             format_query = "&Format=#{Openapi.config.format.to_s.upcase}"
@@ -20,7 +16,7 @@ module Aliyun
           # private
           def connection(opts = {})
             options = {
-                :headers => {'Accept' => "application/json; charset=utf-8", 'User-Agent' => 'Ruby'},
+                :headers => {'Accept' => 'application/json; charset=utf-8', 'User-Agent' => 'Ruby'},
                 # :proxy => proxy,
                 :url => opts[:end_point]
             } #.merge(opts)

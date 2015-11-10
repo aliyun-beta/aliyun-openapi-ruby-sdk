@@ -25,7 +25,7 @@ module Aliyun::Openapi::Faraday
       @app.call env
     end
 
-    def generate_sign method, options = {}
+    def generate_sign(method, options = {})
       sign = method.to_s.upcase + '&' + CGI.escape('/') + '&' + CGI.escape(Faraday::Utils.build_query(options))
       hmac = OpenSSL::HMAC.digest('sha1', @access_key_secret + '&', sign)
       Base64.encode64(hmac).chomp

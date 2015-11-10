@@ -6,7 +6,7 @@ require File.expand_path('../../../../../../../test/test_helper', __FILE__)
 module Aliyun::Openapi
   class <%= @product.capitalize %>Test < ApiTest
     def test_<%=@api_name%>_<%= @version.delete('-')%>
-      Core::ApiDSL.client.<%= @product %>(version: '<%= @version %>').<%= @api_name %>() do |response|
+      Client.<%= @product %>(version: '<%= @version %>').<%= @api_name %>() do |response|
       end
     end
   end

@@ -22,8 +22,6 @@ module Aliyun
       #
       class ApiDSL
 
-
-
         class << self
 
           attr_reader :root
@@ -32,9 +30,9 @@ module Aliyun
             @root ||= ApiDSL.new(name)
           end
 
-          def defined?
-            !@root.nil?
-          end
+          # def defined?
+          #   !@root.nil?
+          # end
 
           def client(opts={})
             #region
@@ -66,7 +64,7 @@ module Aliyun
         end
 
         def method_missing(symbol, *args)
-          # p symbol
+
           node = @children[symbol]
           if node.respond_to? :read_only=
             node.read_only = @read_only
@@ -78,16 +76,13 @@ module Aliyun
           end
           hash = args
           #version check
-
-          if !hash.empty?  && hash[0][:version]
+          if !hash.empty? && hash[0][:version]
             node = node.send(hash[0][:version].to_sym)
           end
 
           if block_given?
-            if (node.is_a? EndPoint)
+            if node.is_a? EndPoint
               yield node.exec_call(*args)
-            else
-              yield node
             end
           else
             node
@@ -95,17 +90,15 @@ module Aliyun
         end
 
         def to_s(opts = {})
-          space = "_" * opts[:level] if opts[:level]
-          spece = "\n#{space}"
-          "#{space}{ #{@children.map { |k, v| "#{k} : #{v.to_s(level: opts[:level] ? opts[:level] + 1: nil)}" if v }.join(',')}}"
+          space = '_' * (opts[:level] || 0)
+          space = "\n#{space||''}"
+          "#{space}{ #{@children.map { |k, v| "#{k} : #{v.to_s(level: opts[:level] ? opts[:level] + 1 : nil)}" if v }.join(',')}}"
         end
 
-        def end_point(&block)
+        def end_point
           ep = EndPoint.new(@name, @parent)
           yield ep
-          # puts @parent.to_s
           @parent.children[name] = ep
-          # puts @parent.to_s
         end
 
         def product
@@ -118,12 +111,14 @@ module Aliyun
       end
 
 
+      # EndPoint class is the end point description
       class EndPoint
 
         def initialize(name, parent = nil)
           @parent = parent
           @name = name
           @params = {}
+          @params_types = {}
           @methods = []
           @pattern = nil
         end
@@ -133,30 +128,23 @@ module Aliyun
         end
 
         def methods=(methods)
-          @methods = methods.sort.map{|v| v.downcase.to_sym } # GET over POST
+          @methods = methods.sort.map { |v| v.downcase.to_sym } # GET over POST
         end
 
         def pattern=(pattern)
-          @pattern = pattern.gsub(/\[/, '%{').gsub(/\]/, '}')
+          @pattern = pattern.gsub(/\[/, '%{').gsub(/\]/, '}') # build a ruby format syntax 
         end
 
         def exec_call(params={})
           # validate params
           validate_params(params)
           conn = Client.build(self, build_url(params))
-          # if [:delete, :get].include? @methods.first
+
           method = @methods.first || :get
-          response = conn.send(method) do |request|
-            # request.path =
-            request.body = filter_params(params, body_prams) if ! body_prams.nil? && ! body_prams.empty?
-            # require 'pry'; binding.pry
+          conn.send(method) do |request|
+            body_prams = params_by_type(:body)
+            request.body = filter_params(params, body_prams) if !body_prams.nil? && !body_prams.empty?
           end
-          # else
-          #   conn.send(@methods.first, filter_params(params, body_prams))
-          # end
-          # Client.build(self)
-          # return Result.new(params)
-          return response
         end
 
         def to_s(opts={})
@@ -172,36 +160,25 @@ module Aliyun
         end
 
         def build_url(params = {})
-          url = @pattern ? @pattern % filter_params(params, path_params) : ''
-          "#{url}?#{::Faraday::Utils.build_query(action_query.merge(filter_params(params, query_params)))}"
+          url = @pattern ? @pattern % filter_params(params, params_by_type(:path)) : ''
+          "#{url}?#{::Faraday::Utils.build_query(action_query.merge(filter_params(params, params_by_type(:query))))}"
         end
 
         private
 
         def action_query
           {'Action': @name.to_s.split('_').collect(&:capitalize).join,
-          'Version': version.to_s}
+           'Version': version.to_s}
         end
 
         def filter_params(params, filter)
-          params.select{|k,v| filter[k] }
+          params.select { |k, v| filter[k] }
         end
 
-        def query_params
-          @query_params ||= @params.select do |k,v|
-            @params[k][:options]['tagPosition'] == 'Query'
-          end
-        end
-
-        def path_params
-          @path_params ||= @params.select do |k,v|
-            @params[k][:options]['tagPosition'] == 'Path'
-          end
-        end
-
-        def body_prams
-          @body_prams ||= @params.select do |k,v|
-            @params[k][:options]['tagPosition'] == 'Body'
+        # could be :query, :path, :body
+        def params_by_type(type)
+          @params_types[type] ||= @params.select do |k, v|
+            @params[k][:options]['tagPosition'] == type.to_s.capitalize
           end
         end
 
@@ -212,20 +189,33 @@ module Aliyun
             raise InvalidParamsError, "Following Params Required : [#{required.map(&:to_s).join(',')}]"
           end
           type_errors = []
-          params.each do |k,v|
-            unless valid_type?(v, @params[k][:type])
-              type_errors << " #{key} : #{value} is not type of #{@params[k][:type]}"
+          params.each do |k, v|
+            unless valid_type?(@params[k][:type], v)
+              type_errors << " #{k} : #{v} is not type of #{@params[k][:type]}"
             end
           end
           raise InvalidParamsError, "Invalid Value of Params: #{type_errors.join(' | ')}" unless type_errors.empty?
         end
 
         def required_params
-          @required_params ||= @params.select{|k,v| v[:required]}
+          @required_params ||= @params.select { |k, v| v[:required] }
         end
 
         def valid_type?(type, value)
-          true
+          begin
+            case type.to_s.capitalize
+              when 'Boolean'
+                value.equal?(true) || value.equal?(false)
+              when 'Long'
+                value.is_a? Integer
+              when 'List'
+                value.is_a?(String) && value.split(',').size > 0
+              else
+                value.is_a?(Object.const_get(type.to_s.capitalize))
+            end
+          rescue
+            p type
+          end
         end
       end
 

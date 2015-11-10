@@ -8,4 +8,8 @@ class Aliyun::OpenapiTest < Minitest::Test
   def test_it_does_something_useful
     assert true
   end
+
+  def test_get_client
+
+  end
 end

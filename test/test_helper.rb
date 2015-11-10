@@ -26,7 +26,7 @@ require 'aliyun/openapi/all'
 # end
 
 Aliyun::Openapi::Core::ApiDSL.define('openapi').ecs(version:'2014-05-26').create_mock_instance.end_point do |end_point|
-  end_point.param :param1, :int, false
+  end_point.param :param1, :integer, false
   end_point.param :param2, :string, true
 end
 

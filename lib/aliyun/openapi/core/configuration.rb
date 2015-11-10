@@ -12,12 +12,12 @@ module Aliyun
       def initialize
         @end_points = YAML.parse( File.read(END_POINTS_FILE) ).transform
         @format = :json
+        @region = 'cn-hangzhou'
         @end_points.frozen? #make it read only
       end
 
       def look_up_server(product, region = nil)
-        region = @region || 'cn-hangzhou'
-        setting = @end_points.select {|k,v| v[:region_ids].include?(region)}
+        setting = @end_points.select {|k,v| v[:region_ids].include?(region || @region)}
         setting.values[0][:products][product.to_s.gsub(/_/, '-').to_sym] unless setting.empty?
       end
     end
