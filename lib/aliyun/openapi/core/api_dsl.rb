@@ -202,19 +202,15 @@ module Aliyun
         end
 
         def valid_type?(type, value)
-          begin
-            case type.to_s.capitalize
-              when 'Boolean'
-                value.equal?(true) || value.equal?(false)
-              when 'Long'
-                value.is_a? Integer
-              when 'List'
-                value.is_a?(String) && value.split(',').size > 0
-              else
-                value.is_a?(Object.const_get(type.to_s.capitalize))
-            end
-          rescue
-            p type
+          case type.to_s.capitalize
+            when 'Boolean'
+              value.equal?(true) || value.equal?(false)
+            when 'Long'
+              value.is_a? Integer
+            when 'List'
+              value.is_a?(String) && value.split(',').size > 0
+            else
+              value.is_a?(Object.const_get(type.to_s.capitalize))
           end
         end
       end
