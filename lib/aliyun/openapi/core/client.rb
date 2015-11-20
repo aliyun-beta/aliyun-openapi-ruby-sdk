@@ -31,10 +31,8 @@ module Aliyun
               #   end
               # end
               if Openapi.config.format == :xml
-                # require 'pry'; binding.pry
                 connection.use ::Faraday::Response::ParseXml
               else
-                # require 'pry'; binding.pry
                 connection.use ::Faraday::Response::ParseJson
               end
               # connection.use FaradayMiddleware::RaiseHttpException
