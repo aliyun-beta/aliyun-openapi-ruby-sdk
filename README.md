@@ -41,14 +41,14 @@ require 'aliyun/openapi/ecs'
 Here is the example:
 
 ```ruby
-Aliyun::Openapi::Core::ApiDSL.client.ecs(version:'2014-05-26').describe_regions do |response|
+Aliyun::Openapi::Client.ecs(version:'2014-05-26').describe_regions do |response|
   p response
 end
 ```
 
 The basic calling name convention is :
 ```ruby
-Aliyun::Openapi::Core::ApiDSL.client.[product](version: [version]).[api_end_point]([param_key]: [param_value] ...) do |resposne|
+Aliyun::Openapi::Client.[product](version: [version]).[api_end_point]([param_key]: [param_value] ...) do |resposne|
 # response is a Faraday response object
 end
 ```

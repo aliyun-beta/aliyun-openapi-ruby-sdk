@@ -11,6 +11,7 @@ module Aliyun::Openapi
         config.ssl_required = true
         config.access_key_id = 'testid'
         config.access_key_secret = 'testsecret'
+        config.format = :json
       end
       stub_request(:any, /.*\.aliyuncs\.com/)
     end

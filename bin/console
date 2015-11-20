@@ -7,13 +7,10 @@ Aliyun::Openapi.configure do |config|
   config.access_key_id = ENV['KEY_ID']
   config.access_key_secret = ENV['KEY_SECRET']
 end
-# c = Aliyun::Openapi::Core::Client.connection(:end_point => 'https://ecs.aliyuncs.com/?Action=DescribeRegions&Format=JSON&Version=2014-05-26')
-# require 'pry'; binding.pry
-# p c.get
 puts Rainbow('Sample 1:').green
 puts <<-EOS
 require 'aliyun/openapi/ecs'
-Aliyun::Openapi::Core::ApiDSL.client.ecs(version:'2014-05-26').describe_regions do |response|
+Aliyun::Openapi::Client.ecs(version:'2014-05-26').describe_regions do |response|
   # require 'pry'; binding.pry
   p response
 end
@@ -22,7 +19,7 @@ puts Rainbow('=').yellow * 128
 puts Rainbow('Sample 2:').green
 puts <<-EOS
 require 'aliyun/openapi/all'
-Aliyun::Openapi::Core::ApiDSL.client.ecs(version:'2014-05-26').describe_regions do |response|
+Aliyun::Openapi::Client.ecs(version:'2014-05-26').describe_regions do |response|
   # require 'pry'; binding.pry
   p response
 end

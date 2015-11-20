@@ -7,6 +7,7 @@ module Aliyun::Openapi
   class <%= @product.capitalize %>Test < ApiTest
     def test_<%=@api_name%>_<%= @version.delete('-')%>
       Client.<%= @product %>(version: '<%= @version %>').<%= @api_name %>() do |response|
+      	assert !response.nil?
       end
     end
   end

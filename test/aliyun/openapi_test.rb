@@ -5,11 +5,14 @@ class Aliyun::OpenapiTest < Minitest::Test
     refute_nil ::Aliyun::Openapi::VERSION
   end
 
-  def test_it_does_something_useful
-    assert true
-  end
-
   def test_get_client
-
+    Aliyun::Openapi.configure do |config|
+      config.ssl_required = true
+      config.format = :xml
+    end
+    stub_request(:any, /.*\.aliyuncs\.com/)
+    assert_equal :ecs, Aliyun::Openapi::Client.ecs(version: '2014-05-26').create_mock_instance.product
+    Aliyun::Openapi::Client.ecs(version: '2014-05-26').create_mock_instance(param2: 'abc') do |reponse|
+    end
   end
 end

@@ -1,7 +1,7 @@
 if ENV["COVERAGE"]
   require 'simplecov'
   SimpleCov.start  do
-    add_group "Core", ["core", "openapi.rb"]
+    add_group "Core", ["core", "openapi.rb", 'faraday']
     add_group "Generated", "/generated/lib"
     add_filter "test/"
   end
@@ -42,6 +42,10 @@ end
 
 class ApiTest < Minitest::Test
   def setup
+    Aliyun::Openapi.configure do |config|
+      config.ssl_required = true
+      config.format = :json
+    end
     Aliyun::Openapi::Core::EndPoint.any_instance.stubs(:exec_call).returns(Faraday::Response.new)
   end
 

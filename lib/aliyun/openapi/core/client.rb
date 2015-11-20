@@ -1,5 +1,6 @@
 require 'faraday'
 require 'faraday_middleware'
+require 'multi_xml'
 require 'aliyun/openapi/faraday/openapi_sign'
 module Aliyun
   module Openapi
@@ -30,8 +31,10 @@ module Aliyun
               #   end
               # end
               if Openapi.config.format == :xml
-                connection.use ::Faraday::Response::ParseXML
+                # require 'pry'; binding.pry
+                connection.use ::Faraday::Response::ParseXml
               else
+                # require 'pry'; binding.pry
                 connection.use ::Faraday::Response::ParseJson
               end
               # connection.use FaradayMiddleware::RaiseHttpException
