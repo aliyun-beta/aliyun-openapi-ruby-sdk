@@ -1,4 +1,5 @@
-unless ENV["NO_COVERAGE"]
+unless ENV["COVERALLS_RUN_LOCALLY"]
+  require 'coveralls'
   require 'simplecov'
   SimpleCov.formatter = Coveralls::SimpleCov::Formatter
   SimpleCov.start  do
