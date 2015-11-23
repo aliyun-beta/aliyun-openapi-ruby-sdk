@@ -6,8 +6,18 @@ if ENV["TESTLOCAL"]
     add_filter "test/"
   end
 else
+  require 'simplecov'
   require 'coveralls'
-  Coveralls.wear!
+
+  SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
+    SimpleCov::Formatter::HTMLFormatter,
+    Coveralls::SimpleCov::Formatter
+  ]
+  SimpleCov.start  do
+    add_group "Core", ["core", "openapi.rb", 'faraday']
+    add_group "Generated", "/generated/lib"
+    add_filter "test/"
+  end
 end
 
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
@@ -17,11 +27,6 @@ require 'rainbow'
 require "mocha/mini_test"
 require 'webmock/minitest'
 require 'timecop'
-
-
-require 'coveralls'
-Coveralls.wear!
-
 
 $LOAD_PATH.unshift File.expand_path('../../generated/lib', __FILE__)
 
