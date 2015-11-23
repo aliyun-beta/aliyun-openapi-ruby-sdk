@@ -15,7 +15,7 @@ else
   ]
   SimpleCov.start  do
     add_group "Core", ["core", "openapi.rb", 'faraday']
-    add_group "Generated", "/generated/lib"
+    add_filter "generated"
     add_filter "test/"
   end
 end
