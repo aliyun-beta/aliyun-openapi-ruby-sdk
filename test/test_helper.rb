@@ -1,5 +1,6 @@
-if ENV["COVERAGE"]
+unless ENV["NO_COVERAGE"]
   require 'simplecov'
+  SimpleCov.formatter = Coveralls::SimpleCov::Formatter
   SimpleCov.start  do
     add_group "Core", ["core", "openapi.rb", 'faraday']
     add_group "Generated", "/generated/lib"
@@ -9,12 +10,15 @@ if ENV["COVERAGE"]
 end
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 require 'aliyun/openapi'
-require 'pry'
 require 'minitest/autorun'
 require 'rainbow'
 require "mocha/mini_test"
 require 'webmock/minitest'
 require 'timecop'
+
+
+require 'coveralls'
+Coveralls.wear!
 
 
 $LOAD_PATH.unshift File.expand_path('../../generated/lib', __FILE__)

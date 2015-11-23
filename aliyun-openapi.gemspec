@@ -37,7 +37,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'activesupport', '~> 4.2'
   spec.add_development_dependency "rainbow", "~> 2.0"
   spec.add_development_dependency "mocha", "~> 1.1"
-  spec.add_development_dependency 'simplecov', '~> 0.10.0'
+  # spec.add_development_dependency 'simplecov', '~> 0.10.0'
   spec.add_development_dependency 'faraday', '~> 0.9.2'
   spec.add_development_dependency 'webmock', '~> 1.22.3'
   spec.add_development_dependency 'vcr', '~> 3.0'
