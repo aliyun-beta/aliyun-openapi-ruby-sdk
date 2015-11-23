@@ -2,6 +2,7 @@
 
 [![Join the chat at https://gitter.im/shruby/aliyun-openapi](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/shruby/aliyun-openapi?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Build Status](https://travis-ci.org/genewoo/aliyun-openapi-ruby-sdk.svg)](https://travis-ci.org/genewoo/aliyun-openapi-ruby-sdk)
+[![Coverage Status](https://coveralls.io/repos/genewoo/aliyun-openapi-ruby-sdk/badge.svg?branch=master&service=github)](https://coveralls.io/github/genewoo/aliyun-openapi-ruby-sdk?branch=master)
 
 # How does it work?
 
