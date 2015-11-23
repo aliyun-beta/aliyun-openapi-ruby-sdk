@@ -69,7 +69,7 @@ module Aliyun::Openapi
 
     def test_build_url
       assert_kind_of Core::EndPoint, Client.ecs(version: '2014-05-26').create_mock_project
-      assert_equal '/projects/1/alerts?Action=CreateMockProject&Type=Integer&Version=2014-05-26', Client.ecs(version: '2014-05-26').create_mock_project.build_url('ProjectName': 1, 'Alert': 'abcdefg', 'Type': 'Integer')
+      assert_equal '/projects/1/alerts?Action=CreateMockProject&Type=Integer&Version=2014-05-26', Client.ecs(version: '2014-05-26').create_mock_project.build_url('ProjectName' => 1, 'Alert' => 'abcdefg', 'Type' => 'Integer')
     end
 
     def test_endpoints_with_different_versions
