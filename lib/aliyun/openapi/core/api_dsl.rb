@@ -167,8 +167,8 @@ module Aliyun
         private
 
         def action_query
-          {'Action': @name.to_s.split('_').collect(&:capitalize).join,
-           'Version': version.to_s}
+          {'Action' => @name.to_s.split('_').collect(&:capitalize).join,
+           'Version' => version.to_s}
         end
 
         def filter_params(params, filter)
