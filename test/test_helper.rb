@@ -1,14 +1,15 @@
-unless ENV["COVERALLS_RUN_LOCALLY"]
-  require 'coveralls'
+if ENV["TESTLOCAL"]
   require 'simplecov'
-  SimpleCov.formatter = Coveralls::SimpleCov::Formatter
   SimpleCov.start  do
     add_group "Core", ["core", "openapi.rb", 'faraday']
     add_group "Generated", "/generated/lib"
     add_filter "test/"
   end
-  # puts "required simplecov"
+else
+  require 'coveralls'
+  Coveralls.wear!
 end
+
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 require 'aliyun/openapi'
 require 'minitest/autorun'
