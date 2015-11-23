@@ -33,6 +33,7 @@ module Aliyun::Openapi::Faraday
 
     def initialize(app, access_key_id, access_key_secret)
       @app = app
+      # todo error handling for invalid configuration
       @access_key_secret = access_key_secret
       @access_key_id = access_key_id
     end

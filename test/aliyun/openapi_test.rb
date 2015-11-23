@@ -9,6 +9,8 @@ class Aliyun::OpenapiTest < Minitest::Test
     Aliyun::Openapi.configure do |config|
       config.ssl_required = true
       config.format = :xml
+      config.access_key_id = 'id'
+      config.access_key_secret = 'sec'
     end
     stub_request(:any, /.*\.aliyuncs\.com/)
     assert_equal :ecs, Aliyun::Openapi::Client.ecs(version: '2014-05-26').create_mock_instance.product
