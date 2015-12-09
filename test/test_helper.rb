@@ -28,9 +28,10 @@ require "mocha/mini_test"
 require 'webmock/minitest'
 require 'timecop'
 
-$LOAD_PATH.unshift File.expand_path('../../generated/lib', __FILE__)
-
-require 'aliyun/openapi/all'
+if File.directory?('../../generated/')
+  $LOAD_PATH.unshift File.expand_path('../../generated/lib', __FILE__)
+  require 'aliyun/openapi/all'
+end
 #
 # Dir[File.expand_path('../../generated/lib/aliyun/openapi/*.rb', __FILE__)].each do |path|
 #   require path.gsub(/^.*generated\/lib\/(.*)\.rb/, '\1')

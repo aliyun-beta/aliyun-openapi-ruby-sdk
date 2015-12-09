@@ -2,8 +2,7 @@ require 'rainbow'
 
 namespace :test do
 
-  Rake::TestTask.new(:core => 'codegen:generate_code') do |t|
-    # Rake::Task['codegen:generate_code'].invoke
+  Rake::TestTask.new(:core) do |t|
     t.libs << "test"
     t.libs << "lib"
     t.description = "Run core test"
@@ -11,7 +10,6 @@ namespace :test do
   end
 
   Rake::TestTask.new(:generated => 'codegen:generate_code') do |t|
-    # Rake::Task['codegen:generate_code'].invoke
     t.libs << "test"
     t.libs << "lib"
     t.libs << "generate/lib"
