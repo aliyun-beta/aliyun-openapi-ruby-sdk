@@ -21,12 +21,8 @@ namespace :codegen do
 
   desc "generate code from template"
   task :generate_code do
-    # products = `ls openapi-meta/api-metadata`.split("\n")
-    # products.each do |product|
     products = []
     products_files = {}
-    # next unless product == 'aliyun-api-metadata-ecs'
-     # = version_files #`ls openapi-meta/api-metadata/#{product}`.split("\n")
     version_files.each do |version_file|
       # next if version_file != 'openapi-meta/api-metadata/aliyun-api-metadata-ecs/2014-05-26/Version-Info.json'
       files = []
@@ -34,9 +30,7 @@ namespace :codegen do
       api_names["apis"]["apis"].each do |name_h|
         begin
           api_detail = JSON.parse(File.read(File.expand_path("./Api/#{name_h["name"]}.json", File.dirname(version_file))))
-          # version_in_rb = "#{api_detail['version'].delete('-')}"
           api_name_in_rb = underscore(name_h["name"])
-          # @product = api_detail['product']
           @version = api_detail['version']
           @api_name = api_name_in_rb
           @api_name_camel_case = name_h["name"]
@@ -50,8 +44,7 @@ namespace :codegen do
         rescue
           puts "#{Rainbow('ERROR :').red} #{File.expand_path("./Api/#{name_h["name"]}.json", File.dirname(version_file))}"
         end
-        products_files[@product] ||= []
-        products_files[@product] += files
+        products_files[@product] = files
         products << "aliyun/openapi/#{@product}"
       end
 
@@ -62,10 +55,6 @@ namespace :codegen do
     end
     @products = products.uniq
     template('templates/api_all.rb', "generated/lib/aliyun/openapi/all.rb")
-    # end
-
-    #
-    # template 'lib/generators/api_define.rb', File.join('app/controllers', class_path, "#{file_name}_controller.rb")
   end
 
 
@@ -92,7 +81,6 @@ namespace :codegen do
     end
     index
   end
-
 
   desc "generate endpoint from xml"
   task :endpoint do
