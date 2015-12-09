@@ -38,8 +38,8 @@ end
 # end
 
 Aliyun::Openapi::Core::ApiDSL.define('openapi').ecs(version:'2014-05-26').create_mock_instance.end_point do |end_point|
-  end_point.param :param1, :integer, false
-  end_point.param :param2, :string, true
+  end_point.param :param1, :Integer, false, {'maxValue' => 100, 'minValue' => 1}
+  end_point.param :param2, :String, true
 end
 
 Aliyun::Openapi::Core::ApiDSL.define('openapi').ecs(version:'2014-05-26').create_mock_project.end_point do |end_point|

@@ -50,9 +50,33 @@ module Aliyun::Openapi
       # puts Core::ApiDSL.root.to_s(level: 0)
     end
 
-    def test_invalid_params
+    def test_invalid_params_missing_required
       assert_raises(InvalidParamsError) do
-        Client.ecs(version: '2014-05-26').create_mock_instance(param1: 1) do |response|
+        Client.ecs(version: '2014-05-26').create_mock_instance(param1: 100) do |response|
+          assert response.respond_to?(:body)
+          # assert response.respond_to?(:parsed_result)
+        end
+      end
+    end
+
+    def test_invalid_params_wrong_type
+      assert_raises(InvalidParamsError) do
+        Client.ecs(version: '2014-05-26').create_mock_instance(param2: 1234) do |response|
+          assert response.respond_to?(:body)
+          # assert response.respond_to?(:parsed_result)
+        end
+      end
+    end
+
+    def test_invalid_params_invalid_range
+      assert_raises(InvalidParamsError) do
+        Client.ecs(version: '2014-05-26').create_mock_instance(param1: 101, param2: 'abc') do |response|
+          assert response.respond_to?(:body)
+          # assert response.respond_to?(:parsed_result)
+        end
+      end
+      assert_raises(InvalidParamsError) do
+        Client.ecs(version: '2014-05-26').create_mock_instance(param1: 0, param2: 'abc') do |response|
           assert response.respond_to?(:body)
           # assert response.respond_to?(:parsed_result)
         end
@@ -61,7 +85,7 @@ module Aliyun::Openapi
 
     def test_end_point
       assert_equal :ecs, Client.ecs(version: '2014-05-26').create_mock_instance.product
-      assert_equal "create_mock_instance => [param1 -> {:type=>:integer, :required=>false, :options=>{}};param2 -> {:type=>:string, :required=>true, :options=>{}}]", Client.ecs(version: '2014-05-26').create_mock_instance.to_s
+      assert_equal "create_mock_instance => [param1 -> {:type=>:Integer, :required=>false, :options=>{\"maxValue\"=>100, \"minValue\"=>1}};param2 -> {:type=>:String, :required=>true, :options=>{}}]", Client.ecs(version: '2014-05-26').create_mock_instance.to_s
       assert !Client.ecs(version: '2014-05-26').to_s.empty?
       assert_equal :ecs, Client.ecs(version: '2014-05-26').product.name
       assert_equal :'2014-05-26', Client.ecs(version: '2014-05-26').version.name

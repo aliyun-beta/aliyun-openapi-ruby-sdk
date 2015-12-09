@@ -132,7 +132,7 @@ module Aliyun
         end
 
         def pattern=(pattern)
-          @pattern = pattern.gsub(/\[/, '%{').gsub(/\]/, '}') # build a ruby format syntax 
+          @pattern = pattern.gsub(/\[/, '%{').gsub(/\]/, '}') # build a ruby format syntax
         end
 
         def exec_call(params={})
@@ -192,6 +192,10 @@ module Aliyun
           params.each do |k, v|
             unless valid_type?(@params[k][:type], v)
               type_errors << " #{k} : #{v} is not type of #{@params[k][:type]}"
+            end
+            if @params[k][:type] == :Integer
+              type_errors << " #{k} : #{v} is great than maxValue of #{@params[k][:options]['maxValue']}" if @params[k][:options]['maxValue'] && v > @params[k][:options]['maxValue']
+              type_errors << " #{k} : #{v} is less than minValue of #{@params[k][:options]['minValue']}"  if @params[k][:options]['minValue'] && v < @params[k][:options]['minValue']
             end
           end
           raise InvalidParamsError, "Invalid Value of Params: #{type_errors.join(' | ')}" unless type_errors.empty?
