@@ -44,10 +44,10 @@ namespace :codegen do
         rescue
           puts "#{Rainbow('ERROR :').red} #{File.expand_path("./Api/#{name_h["name"]}.json", File.dirname(version_file))}"
         end
-        products_files[@product] = files
         products << "aliyun/openapi/#{@product}"
       end
-
+      products_files[@product] ||= []
+      products_files[@product] += files
     end
     products_files.each do |product, files|
       @files = files
