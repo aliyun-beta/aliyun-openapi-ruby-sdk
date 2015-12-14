@@ -115,10 +115,10 @@ namespace :codegen do
     context = instance_eval("binding")
 
     # create buffers of templates
-    @@templates ||= {}
-    @@templates[source] ||= ERB.new(::File.binread(source), nil, "-", "@output_buffer")
+    @templates ||= {}
+    @templates[source] ||= ERB.new(::File.binread(source), nil, "-", "@output_buffer")
 
-    content = @@templates[source].result(context)
+    content = @templates[source].result(context)
     content = block.call(content) if block
 
     FileUtils.mkdir_p(File.dirname(destination))
