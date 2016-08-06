@@ -55,4 +55,3 @@ Aliyun::Openapi::Client.[product](version: [version]).[api_end_point]([param_key
 end
 ```
 
-
